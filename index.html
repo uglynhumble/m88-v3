@@ -1,0 +1,1147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>М88 — инжиниринг и производство нестандартного оборудования</title>
+<meta name="description" content="М88 — инженерное подразделение группы VM Partners. Проектируем и изготавливаем нестандартное промышленное оборудование под ваш процесс: полный цикл от ТЗ до пусконаладки, производство в России и Китае.">
+<link rel="canonical" href="https://m88.su/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://m88.su/">
+<meta property="og:site_name" content="М88">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="М88 — инжиниринг и производство нестандартного оборудования">
+<meta property="og:description" content="Проектируем и изготавливаем нестандартное промышленное оборудование под ваш процесс: полный цикл от ТЗ до пусконаладки, производство в России и Китае.">
+<meta property="og:image" content="https://m88.su/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#14171C">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --graphite-950:#0E1013; --graphite-900:#14171C; --graphite-850:#181B21;
+  --steel-800:#20242B; --steel-700:#2B2F38; --steel-600:#3A4049;
+  --line-d:rgba(255,255,255,.09); --line-d2:rgba(255,255,255,.05);
+  --fog:#E9ECEF; --fog-2:#F3F5F7; --paper:#FBFBFC;
+  --ink:#14181D; --ink-2:#2A2F37;
+  --muted-d:#959CA8; --muted-l:#5A616B;
+  --ember:#F26A1B; --ember-2:#FF9E2C; --ember-deep:#D2530C;
+  --weld:linear-gradient(135deg,#FFB23E 0%,#F4601A 100%);
+  --maxw:1180px;
+  --sans:"Inter",system-ui,sans-serif;
+  --disp:"Saira Condensed","Inter",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  margin:0;background:var(--graphite-900);color:#E7E9EC;
+  font-family:var(--sans);font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+/* ---------- type ---------- */
+h1,h2,h3{font-family:var(--disp);font-weight:700;line-height:1.02;margin:0;letter-spacing:.005em}
+.eyebrow{
+  font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ember-2);display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:"";width:9px;height:9px;background:var(--ember);transform:rotate(45deg);flex:none}
+.eyebrow.dark{color:var(--ember-deep)}
+.eyebrow.dark::before{background:var(--ember-deep)}
+
+/* ---------- header ---------- */
+header{position:fixed;top:0;left:0;right:0;inset:0 0 auto 0;z-index:50;
+  background:rgba(14,16,19,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-d);transition:padding .25s ease,background .25s ease}
+.bar{display:flex;align-items:center;gap:26px;height:70px;transition:height .25s ease}
+header.shrink .bar{height:58px}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand img{height:52px;width:auto;transition:height .25s ease}
+header.shrink .brand img{height:44px}
+.brand .vm{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--muted-d);
+  border-left:1px solid var(--line-d);padding-left:12px;line-height:1.25;text-transform:uppercase}
+.brand .vm b{color:#cfd3d9;font-weight:600;display:block;letter-spacing:.1em}
+nav.main{margin-left:auto;display:flex;gap:26px;align-items:center}
+nav.main a{font-size:14.5px;color:var(--muted-d);font-weight:500;transition:color .15s}
+nav.main a:hover{color:#fff}
+.btn{font-family:var(--sans);font-weight:600;font-size:14.5px;border:0;cursor:pointer;
+  border-radius:2px;padding:11px 20px;display:inline-flex;align-items:center;gap:9px;transition:transform .12s, box-shadow .2s, background .2s,color .2s}
+.btn .arr{font-family:var(--mono);transition:transform .18s}
+.btn:hover .arr{transform:translateX(3px)}
+.btn-primary{background:var(--weld);color:#1a1205;box-shadow:0 6px 22px -8px rgba(242,106,27,.7)}
+.btn-primary:hover{box-shadow:0 10px 28px -8px rgba(242,106,27,.85)}
+.btn-ghost{background:transparent;color:#E7E9EC;border:1px solid var(--steel-600)}
+.btn-ghost:hover{border-color:var(--ember);color:#fff}
+.btn-dark{background:var(--ink);color:#fff}
+.menu-toggle{display:none;margin-left:auto;background:none;border:1px solid var(--steel-600);
+  color:#fff;width:42px;height:38px;border-radius:2px;cursor:pointer;font-size:18px}
+
+/* ---------- section frame ---------- */
+.section{padding:104px 0;position:relative}
+.section.light{background:var(--fog-2);color:var(--ink)}
+.section.dark{background:var(--graphite-900)}
+.section.darker{background:var(--graphite-950)}
+.grid-bg{position:absolute;top:0;right:0;bottom:0;left:0;inset:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(var(--line-d2) 1px,transparent 1px),linear-gradient(90deg,var(--line-d2) 1px,transparent 1px);
+  background-size:46px 46px;mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,#000 30%,transparent 100%)}
+.sec-head{max-width:760px;margin-bottom:50px}
+.sec-head h2{font-size:clamp(34px,4.6vw,54px);margin:16px 0 0;text-transform:uppercase}
+.section.light .sec-head h2{color:var(--ink)}
+.sec-head p{margin:16px 0 0;color:var(--muted-d);font-size:17.5px;max-width:600px}
+.section.light .sec-head p{color:var(--muted-l)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:150px 0 80px;background:
+  radial-gradient(120% 90% at 78% 18%,rgba(242,106,27,.16),transparent 55%),
+  radial-gradient(80% 70% at 12% 90%,rgba(40,70,120,.16),transparent 60%),
+  var(--graphite-950);overflow:hidden}
+.hero .grid-bg{opacity:.7;mask-image:radial-gradient(ellipse 90% 80% at 35% 35%,#000 20%,transparent 95%)}
+.hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(42px,6vw,80px);text-transform:uppercase;letter-spacing:.004em;margin:22px 0 0}
+.hero h1 .glow{background:var(--weld);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{margin:24px 0 0;font-size:19px;color:#C3C8CF;max-width:540px;line-height:1.55}
+.hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.hero-figure{position:relative}
+.hero-figure .render{filter:drop-shadow(0 40px 60px rgba(0,0,0,.6));
+  animation:float 7s ease-in-out infinite;transform-origin:center;margin:0 auto;max-width:430px;width:100%}
+.hero-figure::before{content:"";position:absolute;inset:6% 8% 10% 8%;border-radius:50%;
+  background:radial-gradient(circle,rgba(242,106,27,.32),transparent 68%);filter:blur(30px);z-index:0}
+@keyframes float{0%,100%{transform:translateY(-8px)}50%{transform:translateY(8px)}}
+.hero-tag{position:absolute;z-index:3;font-family:var(--mono);font-size:11px;letter-spacing:.05em;
+  background:rgba(20,23,28,.86);border:1px solid var(--line-d);padding:6px 10px;border-radius:2px;color:#cfd3d9;
+  -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.hero-tag b{color:var(--ember-2);font-weight:600}
+.hero-tag.t1{top:14%;left:-4%}
+.hero-tag.t2{bottom:20%;right:-6%}
+.hero-tag .ax{color:var(--ember-2);font-weight:600;margin-right:6px}
+
+/* stat strip */
+.stats{position:relative;z-index:2;margin-top:64px;border-top:1px solid var(--line-d);
+  display:grid;grid-template-columns:repeat(4,1fr)}
+.stats .st{padding:26px 24px 0;border-right:1px solid var(--line-d)}
+.stats .st:last-child{border-right:0}
+.stats .num{font-family:var(--disp);font-weight:700;font-size:40px;line-height:1;color:#fff}
+.stats .num span{color:var(--ember-2)}
+.stats .lbl{margin-top:8px;font-size:14px;color:var(--muted-d);line-height:1.35}
+
+/* ---------- competence cards ---------- */
+.cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{position:relative;background:var(--graphite-850);border:1px solid var(--line-d);
+  padding:26px 24px 28px;border-radius:3px;transition:border-color .2s,transform .2s,background .2s}
+.section.light .card{background:#fff;border-color:#E2E5E9;box-shadow:0 1px 0 #fff inset}
+.card:hover{border-color:var(--ember);transform:translateY(-3px)}
+.card .idx{font-family:var(--mono);font-size:12px;color:var(--ember-2);letter-spacing:.1em}
+.section.light .card .idx{color:var(--ember-deep)}
+.card h3{font-size:22px;text-transform:uppercase;margin:14px 0 10px;line-height:1.05}
+.card p{margin:0;font-size:14.5px;color:var(--muted-d)}
+.section.light .card p{color:var(--muted-l)}
+.card::after{content:"";position:absolute;top:0;right:0;width:14px;height:14px;
+  border-top:2px solid transparent;border-right:2px solid transparent;transition:border-color .2s}
+.card:hover::after{border-color:var(--ember)}
+
+/* ---------- services ---------- */
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.svc-item{position:relative;background:#fff;border:1px solid #E2E5E9;border-radius:3px;padding:30px 30px 32px;overflow:hidden}
+.svc-item .bignum{position:absolute;top:14px;right:18px;font-family:var(--disp);font-weight:800;
+  font-size:78px;color:#EEF0F3;line-height:1;z-index:0;user-select:none}
+.svc-item>*{position:relative;z-index:1}
+.svc-item h3{font-size:25px;text-transform:uppercase;color:var(--ink);margin-bottom:14px;max-width:80%}
+.svc-item .desc{font-size:15px;color:var(--muted-l);margin:0 0 16px}
+.svc-item ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.svc-item li{font-size:14.5px;color:var(--ink-2);padding-left:20px;position:relative;line-height:1.45}
+.svc-item li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;background:var(--ember);transform:rotate(45deg)}
+.svc-item .tags{margin-top:18px;padding-top:16px;border-top:1px dashed #DADEE3;font-size:13px;color:var(--muted-l)}
+.svc-item .tags b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ember-deep);margin-bottom:8px;font-weight:600}
+.chiprow{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:12.5px;background:var(--fog-2);border:1px solid #E2E5E9;color:var(--ink-2);padding:5px 10px;border-radius:2px}
+.svc-quote{grid-column:1/-1;background:var(--ink);color:#fff;border-radius:3px;padding:30px 34px;
+  display:flex;align-items:center;gap:20px;font-family:var(--disp);font-weight:600;font-size:clamp(20px,2.5vw,28px);text-transform:uppercase;line-height:1.1}
+.svc-quote .mk{font-family:var(--mono);font-size:12px;color:var(--ember-2);letter-spacing:.14em;white-space:nowrap;text-transform:uppercase;font-weight:600}
+
+/* ---------- ARIS flagship ---------- */
+.aris{background:
+  radial-gradient(90% 120% at 85% 10%,rgba(242,106,27,.13),transparent 55%),var(--graphite-950);position:relative;overflow:hidden}
+.aris-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:46px;align-items:center;position:relative;z-index:2}
+.win-badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;
+  letter-spacing:.05em;background:rgba(242,106,27,.12);border:1px solid rgba(242,106,27,.4);
+  color:var(--ember-2);padding:8px 13px;border-radius:2px}
+.win-badge .star{color:var(--ember-2)}
+.aris h2{font-size:clamp(40px,5.5vw,68px);text-transform:uppercase;margin:20px 0 0}
+.aris h2 small{display:block;font-family:var(--mono);font-size:14px;letter-spacing:.14em;color:var(--muted-d);font-weight:400;margin-top:10px;text-transform:none}
+.aris .sub{color:#C3C8CF;font-size:17px;margin:18px 0 0;max-width:520px}
+.param-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:30px;
+  background:var(--line-d);border:1px solid var(--line-d);border-radius:3px;overflow:hidden}
+.param{background:var(--graphite-900);padding:18px 16px}
+.param .v{font-family:var(--disp);font-weight:700;font-size:27px;color:#fff;line-height:1}
+.param .v span{color:var(--ember-2)}
+.param .k{font-size:12.5px;color:var(--muted-d);margin-top:7px;line-height:1.3}
+.aris-fig{position:relative}
+.aris-fig::before{content:"";position:absolute;inset:5% 6%;border-radius:50%;
+  background:radial-gradient(circle,rgba(242,106,27,.28),transparent 66%);filter:blur(34px)}
+.aris-fig .render{position:relative;z-index:1;max-width:400px;width:100%;margin:0 auto;filter:drop-shadow(0 36px 50px rgba(0,0,0,.55))}
+/* axis datasheet */
+.axes{margin-top:24px;border:1px solid var(--line-d);border-radius:3px;overflow:hidden;background:var(--graphite-900)}
+.axes .ax-head{display:flex;justify-content:space-between;align-items:center;padding:11px 16px;
+  border-bottom:1px solid var(--line-d);font-family:var(--mono);font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted-d)}
+.ax-row{display:grid;grid-template-columns:54px 1fr auto;gap:14px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line-d2)}
+.ax-row:last-child{border-bottom:0}
+.ax-row .sym{font-family:var(--disp);font-weight:700;font-size:24px;color:var(--ember-2);text-align:center}
+.ax-row .nm{font-size:14.5px;color:#E7E9EC}
+.ax-row .nm i{display:block;font-style:normal;font-size:12.5px;color:var(--muted-d);margin-top:2px}
+.ax-row .rg{font-family:var(--mono);font-size:13px;color:#fff;white-space:nowrap}
+.aris-note{margin-top:18px;font-size:13.5px;color:var(--muted-d);border-left:2px solid var(--ember);padding-left:14px;line-height:1.5}
+
+/* ---------- cases ---------- */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.case{position:relative;background:#fff;border:1px solid #E2E5E9;border-radius:3px;padding:26px 24px 26px;
+  display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s}
+.case:hover{transform:translateY(-4px);border-color:var(--ember);box-shadow:0 18px 40px -22px rgba(20,24,29,.4)}
+.case .metric{font-family:var(--disp);font-weight:700;font-size:30px;color:var(--ink);line-height:1.02}
+.case .metric span{color:var(--ember-deep)}
+.case h3{font-size:18px;text-transform:uppercase;color:var(--ink);margin:14px 0 9px;line-height:1.08;font-weight:600}
+.case p{margin:0;font-size:14px;color:var(--muted-l)}
+.case .ribbon{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ember-deep);margin-bottom:14px}
+/* ARIS leading card */
+.case[data-modal]{cursor:pointer}
+.case[data-modal]:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+.case-metrics{display:flex;margin:2px 0 4px;border-top:1px solid #ECEEF1;border-bottom:1px solid #ECEEF1}
+.case-metrics .cm{padding:14px 0;margin-right:16px;padding-right:16px;border-right:1px solid #ECEEF1}
+.case-metrics .cm:last-child{margin-right:0;padding-right:0;border-right:0}
+.cmv{font-family:var(--disp);font-weight:700;font-size:28px;color:var(--ink);line-height:1;white-space:nowrap}
+.cmk{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted-l);margin-top:6px}
+.case-more{margin-top:auto;padding-top:16px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;
+  color:var(--ember-deep);display:inline-flex;align-items:center;gap:7px;font-weight:500}
+.case-more .arr{transition:transform .18s}
+.case[data-modal]:hover .case-more .arr{transform:translateX(4px)}
+.case h3{margin-top:14px}
+.case[data-modal] h3{margin-top:16px}
+
+/* ---------- modal ---------- */
+.modal-overlay{position:fixed;top:0;right:0;bottom:0;left:0;inset:0;z-index:100;background:rgba(8,10,12,.8);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);
+  display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto;
+  opacity:0;transition:opacity .22s ease}
+.modal-overlay[hidden]{display:none}
+.modal-overlay.show{opacity:1}
+.modal{position:relative;max-width:1000px;width:100%;margin:auto;
+  background:radial-gradient(90% 120% at 85% 4%,rgba(242,106,27,.12),transparent 55%),var(--graphite-950);
+  border:1px solid var(--line-d);border-radius:6px;padding:40px;
+  transform:translateY(14px) scale(.99);transition:transform .22s ease}
+.modal-overlay.show .modal{transform:none}
+.modal-close{position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:3px;
+  background:var(--graphite-850);border:1px solid var(--line-d);color:#fff;font-size:24px;line-height:1;
+  cursor:pointer;z-index:3;transition:border-color .15s,background .15s}
+.modal-close:hover{border-color:var(--ember);background:var(--steel-800)}
+.modal-body{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:start}
+.modal-info .win-badge{margin-bottom:18px}
+.modal-title{font-family:var(--disp);font-weight:700;font-size:clamp(30px,3.6vw,46px);text-transform:uppercase;color:#fff;line-height:1.02}
+.modal-title small{display:block;font-family:var(--mono);font-size:13px;letter-spacing:.12em;color:var(--muted-d);font-weight:400;margin-top:10px;text-transform:none}
+.modal-sub{color:#C3C8CF;font-size:16px;margin:16px 0 0}
+.modal .param-grid{margin-top:26px}
+.modal .aris-fig{margin-bottom:8px}
+.modal .aris-fig .render{max-width:340px}
+.modal .axes{margin-top:20px}
+/* generic spec list for case modals (e.g. mechanism composition) */
+.modal-spec{margin-top:20px;border:1px solid var(--line-d);border-radius:3px;background:var(--graphite-900);overflow:hidden}
+.modal-spec .ms-head{padding:11px 16px;border-bottom:1px solid var(--line-d);font-family:var(--mono);
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-d)}
+.modal-spec ul{list-style:none;margin:0;padding:8px 16px 12px}
+.modal-spec li{position:relative;padding:7px 0 7px 18px;font-size:14px;color:#E7E9EC;border-bottom:1px solid var(--line-d2)}
+.modal-spec li:last-child{border-bottom:0}
+.modal-spec li::before{content:"";position:absolute;left:0;top:13px;width:7px;height:7px;background:var(--ember);transform:rotate(45deg)}
+/* flow diagram (SVG) inside modal */
+.flowsvg{margin-top:6px}
+.flowsvg svg{width:100%;height:auto;max-width:330px;display:block;margin:0 auto}
+.flow-cap{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-d);text-align:center;margin-top:14px}
+/* 4-param grid variant (2x2) */
+.param-grid.cols2{grid-template-columns:repeat(2,1fr)}
+/* reverse-engineering mini gallery */
+.rev-gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rev-tile{background:#EDEFF2;border:1px solid var(--line-d);border-radius:4px;overflow:hidden}
+.rev-tile .img{height:104px;display:flex;align-items:center;justify-content:center;background:#EDEFF2}
+.rev-tile img{width:100%;height:100%;object-fit:contain}
+.rev-tile .cap{font-family:var(--mono);font-size:10px;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--muted-d);padding:8px 10px;border-top:1px solid var(--line-d);background:var(--graphite-900)}
+.gallery-head{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-d);margin:0 0 12px}
+/* GBC dark single-column gallery */
+.gbc-gallery{grid-template-columns:1fr}
+.gbc-gallery .rev-tile{background:#14171C}
+.gbc-gallery .rev-tile .img{height:150px;background:#14171C}
+body.no-scroll{overflow:hidden}
+@media(max-width:860px){
+  .modal-body{grid-template-columns:1fr;gap:24px;padding-top:30px}
+  .modal{padding:30px 20px 34px}
+  .modal .aris-fig{max-width:260px;margin:18px auto 10px}
+  .modal .axes .ax-head{font-size:10px;letter-spacing:.04em}
+}
+
+/* ---------- process ---------- */
+.flow{position:relative;z-index:2}
+.flow-legend{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:26px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-d)}
+.flow-legend b{color:var(--ember-2);font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(8,1fr);gap:0;border:1px solid var(--line-d);border-radius:3px;overflow:hidden}
+.step{padding:20px 14px;border-right:1px solid var(--line-d);position:relative;background:var(--graphite-850)}
+.step:last-child{border-right:0}
+.step .n{font-family:var(--mono);font-size:11px;color:var(--ember-2)}
+.step .t{font-family:var(--disp);font-weight:600;font-size:17px;text-transform:uppercase;margin-top:8px;line-height:1.05;color:#fff}
+.step.build{background:#191c22}
+.flow-foot{margin-top:18px;font-size:14px;color:var(--muted-d)}
+.flow-foot b{color:#fff;font-weight:600}
+
+/* ---------- industries ---------- */
+.ind{display:flex;flex-direction:column;gap:12px}
+.ind-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.ind .it{font-family:var(--disp);font-weight:600;text-transform:uppercase;font-size:20px;
+  border:1px solid #DDE1E6;background:#fff;color:var(--ink);padding:14px 20px;border-radius:3px;
+  display:flex;align-items:center;gap:12px;transition:border-color .2s,color .2s}
+.ind .it:hover{border-color:var(--ember)}
+.ind .it::before{content:"";width:9px;height:9px;background:var(--ember);transform:rotate(45deg);flex:none}
+
+/* ---------- contact ---------- */
+.contact{background:var(--graphite-950);position:relative;overflow:hidden}
+.contact .grid-bg{opacity:.6}
+.cgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:46px;position:relative;z-index:2}
+.cform{background:var(--graphite-850);border:1px solid var(--line-d);border-radius:4px;padding:32px}
+.cform h3{font-size:26px;text-transform:uppercase;color:#fff;margin-bottom:6px}
+.cform .fsub{font-size:14.5px;color:var(--muted-d);margin-bottom:22px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-d)}
+input,textarea{background:var(--graphite-900);border:1px solid var(--steel-700);color:#fff;
+  font-family:var(--sans);font-size:15px;padding:12px 13px;border-radius:2px;width:100%;transition:border-color .15s}
+input:focus,textarea:focus{outline:none;border-color:var(--ember)}
+textarea{resize:vertical;min-height:96px}
+.cform .btn-primary{width:100%;justify-content:center;margin-top:6px;padding:14px}
+.cform .note{font-size:12.5px;color:var(--muted-d);margin-top:12px;text-align:center}
+.cinfo{display:flex;flex-direction:column;gap:22px}
+.cinfo .eyebrow{margin-bottom:4px}
+.cinfo h3{font-size:clamp(30px,4vw,46px);text-transform:uppercase;color:#fff;margin-bottom:8px}
+.cinfo>p{color:var(--muted-d);font-size:16px;margin:0 0 6px}
+.contactline{border-top:1px solid var(--line-d);padding-top:20px;display:flex;flex-direction:column;gap:16px}
+.cl{display:flex;flex-direction:column;gap:3px}
+.cl .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-d)}
+.cl .v{font-size:19px;color:#fff;font-weight:500}
+.cl .v a:hover{color:var(--ember-2)}
+.placeholder-pill{font-family:var(--mono);font-size:10px;letter-spacing:.08em;background:rgba(242,106,27,.14);
+  color:var(--ember-2);border:1px solid rgba(242,106,27,.35);padding:2px 7px;border-radius:10px;margin-left:8px;vertical-align:middle}
+
+/* ---------- footer ---------- */
+footer{background:#0a0c0e;border-top:1px solid var(--line-d);padding:44px 0 38px}
+.foot{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap}
+.foot .brand img{height:40px}
+.foot .slogan{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--muted-d);text-transform:uppercase;margin-top:14px}
+.foot .slogan b{color:var(--ember-2);font-weight:500}
+.foot-r{text-align:right;font-size:13px;color:var(--muted-d);line-height:1.7}
+.foot-r b{color:#cfd3d9;font-weight:600}
+.copy{margin-top:30px;padding-top:20px;border-top:1px solid var(--line-d2);font-size:12.5px;color:#6b727c;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---------- reveal ---------- */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.06s}.reveal.d2{transition-delay:.12s}.reveal.d3{transition-delay:.18s}.reveal.d4{transition-delay:.24s}
+
+/* ---------- responsive ---------- */
+
+/* ---------- cross-link to press-molds page ---------- */
+nav.main a.np{position:relative;color:#C9CFD8}
+nav.main a.np::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--ember);opacity:.55}
+nav.main a.np:hover{color:var(--ember-2)}
+.crosslink{border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d);background:
+  radial-gradient(700px 220px at 82% 50%,rgba(242,106,27,.13),transparent 70%),var(--graphite-950)}
+.cl-in{display:flex;align-items:center;gap:34px;padding:40px 0}
+.cl-txt{flex:1 1 auto;min-width:0}
+.cl-txt .eyebrow{margin-bottom:12px}
+.cl-txt h3{font-size:clamp(26px,3.4vw,38px);margin:0 0 10px;text-transform:uppercase}
+.cl-txt h3 em{font-style:normal;color:var(--ember-2)}
+.cl-txt p{margin:0;color:var(--muted-d);font-size:15.5px;max-width:56ch}
+.cl-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.cl-tags span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted-d);border:1px solid var(--line-d);border-radius:3px;padding:6px 10px}
+.cl-act{flex:none}
+@media(max-width:860px){.cl-in{flex-direction:column;align-items:flex-start;gap:22px;padding:34px 0}
+  .cl-act{width:100%}.cl-act .btn{width:100%;justify-content:center}}
+@media(max-width:980px){
+  nav.main{display:none}
+  .menu-toggle{display:block}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-figure{order:-1;max-width:340px;margin:0 auto}
+  .hero-tag{display:none}
+  .aris-grid,.cgrid{grid-template-columns:1fr}
+  .aris-fig{order:-1;max-width:340px;margin:0 auto}
+  .cards4{grid-template-columns:repeat(2,1fr)}
+  .cases{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .step:nth-child(4){border-right:0}
+}
+@media(max-width:680px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .section{padding:72px 0}
+  .brand img{height:44px}
+  header.shrink .brand img{height:38px}
+  .brand .vm{display:none}
+  .eyebrow{font-size:11px;letter-spacing:.08em}
+  .hero{padding-top:120px}
+  .hero h1{font-size:37px}
+  .hero-figure{max-width:300px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats .st{border-bottom:1px solid var(--line-d)}
+  .stats .st:nth-child(even){border-right:0}
+  .cards4,.svc,.cases{grid-template-columns:1fr}
+  .param-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .step{border-right:1px solid var(--line-d)!important;border-bottom:1px solid var(--line-d)}
+  .step:nth-child(even){border-right:0!important}
+  .frow{grid-template-columns:1fr}
+  .foot-r{text-align:left}
+  .hero-cta .btn{flex:1;justify-content:center}
+  .cform input,.cform textarea{font-size:16px}
+  /* --- фикс горизонтального скролла на узких экранах --- */
+  .svc-quote{flex-direction:column;align-items:flex-start;gap:12px;padding:24px 20px;font-size:20px}
+  .svc-quote .mk{white-space:normal}
+  .case-metrics{flex-wrap:wrap}
+  .case-metrics .cm{min-width:0}
+}
+/* mobile drawer */
+.drawer{position:fixed;top:70px;left:0;right:0;inset:70px 0 auto 0;z-index:49;background:rgba(14,16,19,.98);
+  border-bottom:1px solid var(--line-d);transform:translateY(-120%);transition:transform .3s ease;padding:8px 0 18px}
+.drawer.open{transform:none}
+.drawer a{display:block;padding:13px 28px;font-size:16px;color:#E7E9EC;border-bottom:1px solid var(--line-d2)}
+.drawer .btn{margin:16px 28px 0;width:calc(100% - 56px);justify-content:center}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---- ТЗ-01 hero mobile chips ---- */
+.hero-tags-m{display:none}
+/* ---- ТЗ-08 crane spec figure ---- */
+.spec-fig{margin-top:14px;border:1px solid var(--line-d);border-radius:3px;background:var(--graphite-900);padding:12px 12px 8px}
+.spec-fig img{display:block;width:100%;height:auto}
+.spec-fig figcaption{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-d);margin-top:8px;text-align:center}
+/* ---- ТЗ-13 attachments ---- */
+.dropzone{border:1px dashed var(--steel-700);border-radius:4px;background:var(--graphite-900);padding:18px;cursor:pointer;transition:border-color .15s,background .15s}
+.dropzone:hover,.dropzone:focus,.dropzone.drag{outline:none;border-color:var(--ember);background:rgba(242,106,27,.05)}
+.dz-inner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.dz-ico{font-family:var(--disp);font-weight:700;font-size:22px;color:var(--ember-2);line-height:1}
+.dz-text{font-size:14px;color:#E7E9EC}
+.dz-text u{color:var(--ember-2);text-decoration:none;border-bottom:1px solid var(--ember-2)}
+.dz-hint{font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:var(--muted-d)}
+.filelist{display:flex;flex-direction:column;gap:7px}
+.filelist:not(:empty){margin-top:10px}
+.filechip{display:flex;align-items:center;gap:10px;background:var(--graphite-900);border:1px solid var(--line-d);border-radius:3px;padding:8px 10px}
+.filechip .fc-name{font-size:13px;color:#E7E9EC;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.filechip .fc-size{font-family:var(--mono);font-size:11px;color:var(--muted-d);flex:none}
+.filechip .fc-del{flex:none;background:none;border:0;color:var(--muted-d);cursor:pointer;font-size:16px;line-height:1;padding:0 2px}
+.filechip .fc-del:hover{color:var(--ember)}
+.fc-msg{font-family:var(--mono);font-size:11px;color:var(--ember-2);margin-top:8px}
+/* ---- ТЗ-01 hero chips on mobile ---- */
+@media(max-width:980px){
+  .hero-figure{display:flex;flex-direction:column;align-items:center}
+  .hero-tags-m{display:flex;order:9;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:14px;width:100%}
+  .hero-tags-m .htm{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:#C3C8CF;background:var(--graphite-850);border:1px solid var(--line-d);border-radius:3px;padding:6px 10px}
+  .hero-tags-m .htm .ax{color:var(--ember-2);font-weight:600;margin-right:6px}
+  .hero-tags-m .htm b{color:var(--ember-2);font-weight:600}
+}
+</style>
+<link rel="stylesheet" href="assets/form.css">
+<script>document.documentElement.className+=" js";</script>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap bar">
+    <a class="brand" href="#top">
+      <img src="assets/m88-logo.png" alt="М88">
+      <span class="vm"><b>М88</b>VM&nbsp;PARTNERS</span>
+    </a>
+    <nav class="main">
+      <a href="#competence">Компетенции</a>
+      <a href="#services">Направления</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#process">Процесс</a>
+      <a class="np" href="press-formy/">Пресс-формы</a>
+      <a class="btn btn-primary" href="#contact">ОТПРАВИТЬ ТЗ <span class="arr">→</span></a>
+    </nav>
+    <button class="menu-toggle" id="mt" aria-label="Меню">≡</button>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <a href="#competence">Компетенции</a>
+  <a href="#services">Направления</a>
+  <a href="#cases">Кейсы</a>
+  <a href="#process">Процесс</a>
+  <a href="#industries">Отрасли</a>
+  <a class="np" href="press-formy/">Пресс-формы из Китая</a>
+  <a class="btn btn-primary" href="#contact">ОТПРАВИТЬ ТЗ <span class="arr">→</span></a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Инжиниринг · Технологии · Результат</span>
+        <h1>Нестандартное<br>оборудование <span class="glow">под ваш процесс</span></h1>
+        <p class="lead">М88 — инженерное подразделение группы VM&nbsp;Partners. Проектируем и изготавливаем нестандартное оборудование, оснастку и производственные участки. Полный цикл — от технического задания до ввода в эксплуатацию, с производством в России и Китае.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">ОТПРАВИТЬ ТЗ <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#cases">Смотреть кейсы</a>
+        </div>
+      </div>
+      <div class="hero-figure">
+        <div class="hero-tags-m" aria-hidden="true">
+          <span class="htm"><span class="ax">5 осей</span> X·Y·Z·W·A</span>
+          <span class="htm">отливки до <b>450&nbsp;°C</b></span>
+        </div>
+        <span class="hero-tag t1"><span class="ax">5 осей</span> X·Y·Z·W·A</span>
+        <span class="hero-tag t2">отливки до <b>450&nbsp;°C</b></span>
+        <img class="render" src="assets/case-manipulator.png" alt="Манипулятор для литейного цеха — захват отливок блока цилиндров">
+      </div>
+    </div>
+    <div class="stats">
+      <div class="st reveal"><div class="num">200<span>+</span></div><div class="lbl">проектов<br>реверс-инжиниринга</div></div>
+      <div class="st reveal d1"><div class="num">10<span>+</span></div><div class="lbl">проектов<br>по оборудованию</div></div>
+      <div class="st reveal d2"><div class="num">CAE</div><div class="lbl">верификация<br>каждого проекта</div></div>
+      <div class="st reveal d3"><div class="num">РФ<span>·</span>КНР</div><div class="lbl">собственная база<br>и площадки-партнёры</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCE -->
+<section class="section darker" id="competence">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Что мы умеем</span>
+      <h2>Четыре опоры<br>инженерной работы</h2>
+      <p>За каждым проектом — наработанная база поставщиков, библиотека решений и практика запуска в производство.</p>
+    </div>
+    <div class="cards4">
+      <div class="card reveal"><div class="idx">01</div><h3>Поиск и интеграция технологий</h3><p>База производителей оборудования, оснастки и комплектующих. Проектирование и изготовление сложных узлов. Международные партнёрства.</p></div>
+      <div class="card reveal d1"><div class="idx">02</div><h3>Технологические компетенции</h3><p>Проектирование и запуск производственных участков. Баланс производительности, точности и бюджета.</p></div>
+      <div class="card reveal d2"><div class="idx">03</div><h3>Конструкторские компетенции</h3><p>Внедрённые решения по оснастке и оборудованию. Проекты высокой технической сложности «под процесс».</p></div>
+      <div class="card reveal d3"><div class="idx">04</div><h3>Реверс-инжиниринг</h3><p>Библиотека моделей и решений. Восстановление КД по ЕСКД. Импортозамещение узлов и компонентов.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section light" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow dark">Направления</span>
+      <h2>От узла до целого участка</h2>
+      <p>Беремся за задачи, которые не закрываются каталожным оборудованием.</p>
+    </div>
+    <div class="svc">
+      <div class="svc-item reveal">
+        <div class="bignum">01</div>
+        <h3>Инжиниринг оборудования и оснастки</h3>
+        <p class="desc">Проектируем «под процесс» и доводим до работающего изделия.</p>
+        <ul>
+          <li>Интеграция механики, автоматики и ПО в единую систему</li>
+          <li>Расчёт нагрузок, кинематики и ресурса</li>
+          <li>Подготовка КД и сопровождение изготовления</li>
+          <li>Сопровождение пусконаладки и ввода в эксплуатацию</li>
+        </ul>
+        <div class="tags">
+          <b>Работаем с</b>
+          <div class="chiprow">
+            <span class="chip">Автоматизированные стенды</span>
+            <span class="chip">Манипуляторы и захваты</span>
+            <span class="chip">Сборочный инструмент</span>
+            <span class="chip">Технологическая оснастка</span>
+            <span class="chip">Гидро- и пневмосистемы</span>
+          </div>
+        </div>
+      </div>
+      <div class="svc-item reveal d1">
+        <div class="bignum">02</div>
+        <h3>Комплексные инженерные проекты</h3>
+        <p class="desc">Производственные участки «под ключ»: оборудование + технология + запуск.</p>
+        <ul>
+          <li>Поточные линии механообработки и роботизированные участки</li>
+          <li>Участки штамповки и формообразования</li>
+          <li>Инжиниринг «под малую серию»</li>
+          <li>Интеграция систем контроля качества</li>
+          <li>Локализация производства сложных узлов и модернизация участков</li>
+        </ul>
+        <div class="tags">
+          <b>Ответственность</b>
+          <div class="chiprow">
+            <span class="chip">За технологический результат</span>
+            <span class="chip">Управление рисками внедрения</span>
+            <span class="chip">Баланс производительность · точность · бюджет</span>
+          </div>
+        </div>
+      </div>
+      <div class="svc-item reveal">
+        <div class="bignum">03</div>
+        <h3>CAE-верификация и расчёты</h3>
+        <p class="desc">Верифицируем конструкцию на этапе проектирования до её производства и пусконаладки.</p>
+        <ul>
+          <li>Прочностные расчёты и математический анализ</li>
+          <li>Моделирование рабочих процессов</li>
+          <li>Оценка долговечности и ресурса</li>
+          <li>Проектные расчёты гидро-, пневмо- и электросистем</li>
+        </ul>
+        <div class="tags">
+          <b>Принцип</b>
+          <div class="chiprow"><span class="chip">Анализ рисков на этапе проектирования</span></div>
+        </div>
+      </div>
+      <div class="svc-item reveal d1">
+        <div class="bignum">04</div>
+        <h3>Реверс-инжиниринг</h3>
+        <p class="desc">Восстанавливаем документацию и замещаем импортные компоненты.</p>
+        <ul>
+          <li>Реверс изделий любой сложности, восстановление CAD</li>
+          <li>Выпуск КД по ЕСКД и технологическая проработка под производство</li>
+          <li>Подбор материалов и замещение импортных компонентов</li>
+          <li>Подготовка производства «под ключ»</li>
+        </ul>
+        <div class="tags">
+          <b>Объекты</b>
+          <div class="chiprow">
+            <span class="chip">Корпусные и литые детали</span>
+            <span class="chip">Узлы и детали оборудования и оснастки</span>
+            <span class="chip">Пластик и композиты</span>
+          </div>
+        </div>
+      </div>
+      <div class="svc-quote reveal">
+        <span class="mk">// принцип М88</span>
+        Выявляем ошибки на этапе проектирования, а не в производстве
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="section light" id="cases">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow dark">Кейсы</span>
+      <h2>Проекты и решения</h2>
+      <p>Каждый проект — отдельное техническое задание и расчётно обоснованное решение.</p>
+    </div>
+    <div class="cases">
+      <div class="case case-aris reveal" data-modal="aris" tabindex="0" role="button" aria-label="Подробнее о манипуляторе для литейного цеха">
+        <div class="ribbon">Промышленные манипуляторы</div>
+        <div class="case-metrics">
+          <div class="cm"><div class="cmv">5&nbsp;осей</div><div class="cmk">кинематика</div></div>
+          <div class="cm"><div class="cmv">1000&nbsp;кг</div><div class="cmk">г/п</div></div>
+          <div class="cm"><div class="cmv">IP60</div><div class="cmk">защита</div></div>
+        </div>
+        <h3>Манипулятор для литейного цеха</h3>
+        <p>Захват и перемещение горячих отливок блоков цилиндров с выбивной решётки на охлаждающий конвейер. Полностью электрифицированные приводы.</p>
+        <span class="case-more">Подробнее <span class="arr">→</span></span>
+      </div>
+      <div class="case reveal d1" data-modal="shatun" tabindex="0" role="button" aria-label="Подробнее о станции затяжки крышек шатунов">
+        <div class="ribbon">Сборочные стенды</div>
+        <div class="case-metrics">
+          <div class="cm"><div class="cmv">38&nbsp;сек</div><div class="cmk">цикл</div></div>
+          <div class="cm"><div class="cmv">18</div><div class="cmk">функций</div></div>
+          <div class="cm"><div class="cmv">8</div><div class="cmk">соединений</div></div>
+        </div>
+        <h3>Станция затяжки крышек шатунов</h3>
+        <p>Автоматизированная затяжка болтовых соединений крышек шатунов с поджимом поршней и контролем усилия натяга. Модульная ячейка в соответствии со стандартами безопасности и охраны труда, противопожарными нормами.</p>
+        <span class="case-more">Подробнее <span class="arr">→</span></span>
+      </div>
+      <div class="case reveal d2" data-modal="gbc" tabindex="0" role="button" aria-label="Подробнее о системе тензорной затяжки ГБЦ">
+        <div class="ribbon">Сборочный инструмент</div>
+        <div class="case-metrics">
+          <div class="cm"><div class="cmv">480&nbsp;кН</div><div class="cmk">преднатяг шпилек</div></div>
+          <div class="cm"><div class="cmv">±3&nbsp;кН</div><div class="cmk">допуск усилия</div></div>
+          <div class="cm"><div class="cmv">4&nbsp;гайки</div><div class="cmk">автозатяжка</div></div>
+        </div>
+        <h3>Система тензорной затяжки ГБЦ</h3>
+        <p>Инструмент, гидростанция и манипулятор для автоматизированной затяжки ГБЦ с контролируемым гидравлическим преднатяжением шпилек и синхронизацией заворачивания гаек.</p>
+        <span class="case-more">Подробнее <span class="arr">→</span></span>
+      </div>
+      <div class="case reveal" data-modal="lonzheron" tabindex="0" role="button" aria-label="Подробнее о локализации деталей «лонжерон»">
+        <div class="ribbon">Инжиниринг «малой серии»</div>
+        <div class="case-metrics">
+          <div class="cm"><div class="cmv">12&nbsp;000</div><div class="cmk">шт/год</div></div>
+          <div class="cm"><div class="cmv">4</div><div class="cmk">ДСЕ</div></div>
+          <div class="cm"><div class="cmv">&lt;&nbsp;2.1</div><div class="cmk">млн&nbsp;$</div></div>
+        </div>
+        <h3>Локализация деталей «лонжерон»</h3>
+        <p>Комплексная проработка штамповки и мехобработки деталей типа «лонжерон» под локализацию производства. Оптимизация потока, подбор СТО, подготовка ТЗ на оборудование и расчёт бюджета.</p>
+        <span class="case-more">Подробнее <span class="arr">→</span></span>
+      </div>
+      <div class="case reveal d1" data-modal="crane" tabindex="0" role="button" aria-label="Подробнее о крановых комплексах и лебёдках">
+        <div class="ribbon">Грузоподъёмные механизмы</div>
+        <div class="case-metrics">
+          <div class="cm"><div class="cmv">45&nbsp;т</div><div class="cmk">комплекс</div></div>
+          <div class="cm"><div class="cmv">22,5&nbsp;т</div><div class="cmk">кран</div></div>
+        </div>
+        <h3>Крановые комплексы и лебёдки</h3>
+        <p>Крановый комплекс из двух кранов по 22,5 т, работающих в паре и раздельно. Лебёдки с гидроприводом. Для путевых машинных станций.</p>
+        <span class="case-more">Подробнее <span class="arr">→</span></span>
+      </div>
+      <div class="case reveal d2" data-modal="reverse" tabindex="0" role="button" aria-label="Подробнее о реверс-инжиниринге">
+        <div class="ribbon">Реверс-инжиниринг</div>
+        <div class="case-metrics">
+          <div class="cm"><div class="cmv">200+</div><div class="cmk">проектов</div></div>
+          <div class="cm"><div class="cmv">100+</div><div class="cmk">машиностроение</div></div>
+          <div class="cm"><div class="cmv">20+</div><div class="cmk">оснастка</div></div>
+        </div>
+        <h3>Восстановление КД и импортозамещение</h3>
+        <p>Корпусные детали, штамповая и литейная оснастка, шнеки, заслонки, крыльчатки. Восстановление CAD, выпуск КД по ЕСКД, подготовка производства локализованных деталей.</p>
+        <span class="case-more">Подробнее <span class="arr">→</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section dark" id="process">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Как мы работаем</span>
+      <h2>V-цикл проекта</h2>
+      <p>Проектирование «вниз», реализация «вверх», верификация и валидация — на каждом стыке с заказчиком.</p>
+    </div>
+    <div class="flow">
+      <div class="flow-legend reveal">
+        <span><b>↘</b> Проектирование</span>
+        <span><b>↗</b> Реализация</span>
+        <span><b>✓</b> CAE-верификация и контроль на каждом этапе</span>
+      </div>
+      <div class="steps reveal d1">
+        <div class="step"><div class="n">01</div><div class="t">ТЗ заказчика</div></div>
+        <div class="step"><div class="n">02</div><div class="t">Эскизный проект</div></div>
+        <div class="step"><div class="n">03</div><div class="t">Техпроект</div></div>
+        <div class="step"><div class="n">04</div><div class="t">РКД</div></div>
+        <div class="step build"><div class="n">05</div><div class="t">Изготовление</div></div>
+        <div class="step build"><div class="n">06</div><div class="t">Сборка</div></div>
+        <div class="step build"><div class="n">07</div><div class="t">Монтаж и ПНР</div></div>
+        <div class="step build"><div class="n">08</div><div class="t">Приёмка</div></div>
+      </div>
+      <p class="flow-foot reveal d1"><b>Срок типового проекта — порядка 30 недель</b> от старта до приёмки на площадке заказчика: эскизный и технический проекты, закупка комплектующих, РКД, изготовление, сборка, монтаж и пусконаладка.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="section light" id="industries">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow dark">Отрасли</span>
+      <h2>Где мы работали</h2>
+    </div>
+    <div class="ind reveal d1">
+      <div class="ind-row"><div class="it">Общее машиностроение</div></div>
+      <div class="ind-row"><div class="it">Автопром и автокомпоненты</div><div class="it">Транспортное машиностроение</div></div>
+      <div class="ind-row"><div class="it">Металлоконструкции для строительства</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CROSS-LINK: press molds -->
+<section class="crosslink">
+  <div class="wrap cl-in">
+    <div class="cl-txt">
+      <span class="eyebrow">Отдельное направление</span>
+      <h3>Пресс-формы <em>из Китая под ключ</em></h3>
+      <p>DFM и MouldFlow, изготовление на профильных заводах, приёмка нашим инженером в КНР на материале заказчика, поставка с НДС и пусконаладка в России.</p>
+      <div class="cl-tags"><span>DFM · MouldFlow</span><span>ISO 9001 · IATF 16949</span><span>Приёмка T0 / T1</span><span>Договор с ООО в РФ</span></div>
+    </div>
+    <div class="cl-act"><a class="btn btn-primary" href="press-formy/">Смотреть направление <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    <div class="cgrid">
+      <div class="cform reveal">
+        <h3>Отправьте ТЗ</h3>
+        <p class="fsub">Опишите задачу — вернёмся с техническим предложением и оценкой.</p>
+        <form id="tzform" data-m88form data-endpoint="send.php" data-page="Главная — инжиниринг">
+          <div class="m88-row">
+            <div class="m88-f"><label for="f-name">Имя <span class="req">*</span></label><input id="f-name" name="name" autocomplete="name" placeholder="Как к вам обращаться" required></div>
+            <div class="m88-f"><label for="f-company">Компания</label><input id="f-company" name="company" autocomplete="organization" placeholder="Название организации"></div>
+          </div>
+          <div class="m88-row">
+            <div class="m88-f"><label for="f-phone">Телефон <span class="req">*</span></label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-phone required></div>
+            <div class="m88-f"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="name@company.ru"></div>
+          </div>
+          <div class="m88-f"><label for="f-role">Должность</label><input id="f-role" name="role" autocomplete="organization-title" placeholder="главный инженер / технолог / закупки"></div>
+          <div class="m88-f"><label for="f-task">Задача / описание ТЗ</label><textarea id="f-task" name="message" rows="4" placeholder="Что нужно спроектировать или изготовить, материал, тираж, ключевые требования и сроки…"></textarea></div>
+          <div class="m88-f">
+            <label for="f-files">Вложения</label>
+            <div class="m88-dz" data-dropzone tabindex="0" role="button" aria-label="Выбрать или перетащить файлы">
+              <input type="file" id="f-files" name="files" multiple hidden accept=".pdf,.dwg,.dxf,.step,.stp,.stl,.iges,.igs,.x_t,.sldprt,.sldasm,.zip,.rar,.7z,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx">
+              <span class="m88-dz-ico">+</span><span class="m88-dz-text">Перетащите файлы сюда или <u>выберите</u></span>
+              <span class="m88-dz-hint">PDF · DWG · DXF · STEP · STL · IGES · X_T · SLDPRT · ZIP · RAR · JPG · PNG · DOC · XLS — до 5 файлов, суммарно 20 МБ</span>
+            </div>
+            <div class="m88-files" data-filelist></div>
+          </div>
+          <button type="submit" class="btn btn-primary">ОТПРАВИТЬ ТЗ <span class="arr">→</span></button>
+          <p class="m88-note" data-note>Заявка и файлы уходят прямо в инженерную службу М88 — почтовая программа не открывается. Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+        </form>
+      </div>
+      <div class="cinfo reveal d1">
+        <div>
+          <span class="eyebrow">Два пути</span>
+          <h3>Или свяжитесь напрямую</h3>
+          <p>С техническими вопросами выходите на инженерную службу — обсудим осуществимость до оформления ТЗ.</p>
+        </div>
+        <div class="contactline">
+          <div class="cl"><span class="k">Телефон</span><span class="v"><a href="tel:+74993256982">+7 (499)-325-69-82</a></span></div>
+          <div class="cl"><span class="k">E-mail</span><span class="v"><a href="mailto:zakaz@m88.su">zakaz@m88.su</a></span></div>
+          <div class="cl"><span class="k">Группа компаний</span><span class="v">VM Partners</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top"><img src="assets/m88-logo.png" alt="М88"></a>
+        <div class="slogan">Инжиниринг <b>·</b> Технологии <b>·</b> Результат</div>
+      </div>
+      <div class="foot-r">
+        <b>ООО «М88»</b><br>
+        Инженерное подразделение группы VM Partners<br>
+        Проектирование · CAE-расчёты · Изготовление · ПНР<br>
+        <a href="press-formy/" style="color:var(--ember-2);border-bottom:1px solid rgba(255,158,44,.4)">Пресс-формы из Китая под ключ →</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 М88. Все права защищены.</span>
+      <span>Производство в России и Китае · реверс-инжиниринг · нестандартное оборудование</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-aris" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-aris-title">
+    <button class="modal-close" data-close aria-label="Закрыть">×</button>
+    <div class="modal-body">
+      <div class="modal-info">
+        <span class="eyebrow">Промышленные манипуляторы</span>
+        <h2 class="modal-title" id="modal-aris-title" style="margin-top:16px">Манипулятор для литейного цеха<small>захват отливок блока цилиндров</small></h2>
+        <p class="modal-sub">Захват и перемещение горячих отливок блоков цилиндров с выбивной решётки на охлаждающий конвейер. Полностью электрифицированная система приводов — без гидравлики и пневматики.</p>
+        <div class="param-grid">
+          <div class="param"><div class="v">до 1000<span> кг</span></div><div class="k">грузоподъёмность</div></div>
+          <div class="param"><div class="v">до 450<span> °C</span></div><div class="k">температура отливок</div></div>
+          <div class="param"><div class="v">60<span> сек</span></div><div class="k">расчётный цикл</div></div>
+          <div class="param"><div class="v">100%<span></span></div><div class="k">электропривод</div></div>
+          <div class="param"><div class="v">IP60</div><div class="k">степень защиты</div></div>
+          <div class="param"><div class="v">ПЛК<span></span></div><div class="k">ручной + авто режим</div></div>
+        </div>
+        <div class="aris-note">Концепция без гидравлики и пневматики упрощает эксплуатацию и обслуживание в условиях литейного производства. Управление — ПЛК и частотные приводы.</div>
+      </div>
+      <div class="modal-fig-col">
+        <div class="aris-fig">
+          <img class="render" src="assets/case-manipulator.png" alt="3D-модель манипулятора для литейного цеха с захватом">
+        </div>
+        <div class="axes">
+          <div class="ax-head"><span>Кинематика · 5 осей</span><span>диапазон / привод</span></div>
+          <div class="ax-row"><div class="sym">X</div><div class="nm">Продольное перемещение<i>тележка по балкам</i></div><div class="rg">9–10 м · 45 м/мин</div></div>
+          <div class="ax-row"><div class="sym">Y</div><div class="nm">Поперечное перемещение<i>линейный актуатор</i></div><div class="rg">±300 мм</div></div>
+          <div class="ax-row"><div class="sym">Z</div><div class="nm">Подъём колонны<i>барабанная лебёдка</i></div><div class="rg">0–500 мм</div></div>
+          <div class="ax-row"><div class="sym">W</div><div class="nm">Поворот колонны<i>опорный поворотный узел</i></div><div class="rg">−60…+60°</div></div>
+          <div class="ax-row"><div class="sym">A</div><div class="nm">Зажим / разжим захвата<i>привод винт-гайка</i></div><div class="rg">ход каждой губки 150 мм</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-shatun" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-shatun-title">
+    <button class="modal-close" data-close aria-label="Закрыть">×</button>
+    <div class="modal-body">
+      <div class="modal-info">
+        <span class="eyebrow">Сборочные стенды · автоматизированный стенд</span>
+        <h2 class="modal-title" id="modal-shatun-title" style="margin-top:16px">Станция затяжки крышек шатунов</h2>
+        <p class="modal-sub">Автоматизация одновременной затяжки восьми болтовых соединений крышек шатунов двигателей с поджимом поршней. Проверка усилия натяга через измерение момента сопротивления вращению коленвала.</p>
+        <div class="param-grid">
+          <div class="param"><div class="v">38<span> сек</span></div><div class="k">цикл на позиции</div></div>
+          <div class="param"><div class="v">18<span></span></div><div class="k">функций стенда</div></div>
+          <div class="param"><div class="v">8<span></span></div><div class="k">соединений одновременно</div></div>
+          <div class="param"><div class="v">поджим</div><div class="k">поршней при затяжке</div></div>
+          <div class="param"><div class="v">контроль</div><div class="k">усилия натяга</div></div>
+          <div class="param"><div class="v">ячейка</div><div class="k">модульное исполнение</div></div>
+        </div>
+        <div class="aris-note">Модульная ячейка оформлена в соответствии со стандартами безопасности и охраны труда, противопожарными нормами.</div>
+      </div>
+      <div class="modal-fig-col">
+        <div class="aris-fig">
+          <img class="render" src="assets/case-station-tightening.png" alt="Станция затяжки крышек шатунов — модульная ячейка">
+        </div>
+        <div class="modal-spec">
+          <div class="ms-head">Состав механизма</div>
+          <ul>
+            <li>Рама устройства</li>
+            <li>Блок гайковёртов</li>
+            <li>Захват двигателя</li>
+            <li>Механизм линейного перемещения двигателя</li>
+            <li>Механизм фиксации двигателя и поршней</li>
+            <li>Механизм вращения коленвала</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-lonzheron" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-lonzheron-title">
+    <button class="modal-close" data-close aria-label="Закрыть">×</button>
+    <div class="modal-body">
+      <div class="modal-info">
+        <span class="eyebrow">Производственные участки · инжиниринг «малой серии»</span>
+        <h2 class="modal-title" id="modal-lonzheron-title" style="margin-top:16px">Локализация деталей «лонжерон»</h2>
+        <p class="modal-sub">Комплексная проработка штамповки и механической обработки деталей типа «лонжерон» под локализацию производства — участок штамповки, участок мехобработки, пост контроля.</p>
+        <div class="param-grid">
+          <div class="param"><div class="v">12&nbsp;000</div><div class="k">шт/год · программа</div></div>
+          <div class="param"><div class="v">4<span></span></div><div class="k">ДСЕ типа «лонжерон»</div></div>
+          <div class="param"><div class="v">&lt; 2.1<span> млн&nbsp;$</span></div><div class="k">бюджет проекта (без НДС)</div></div>
+          <div class="param"><div class="v">AutoForm</div><div class="k">моделирование штамповки</div></div>
+          <div class="param"><div class="v">SMED</div><div class="k">быстрая переналадка</div></div>
+          <div class="param"><div class="v">5&nbsp;осей</div><div class="k">отверстия за один установ</div></div>
+        </div>
+        <div class="aris-note">Ключ к бюджету — оптимизация потока: лазерный раскрой и отказ от операции «пробивка» убирают операции на штампах и экономят на штамповой оснастке. Пресс подобран только под «гибку» и «калибровку».</div>
+      </div>
+      <div class="modal-fig-col">
+        <div class="flowsvg">
+          <svg viewBox="0 0 340 486" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Схема оптимизации потока штамповки: операция «пробивка» исключена">
+            <defs>
+              <style>
+                .fbl{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:17px;fill:#fff}
+                .fsub{font-family:'IBM Plex Mono',monospace;font-size:10px;fill:#959CA8}
+                .frm{fill:#181B21;stroke:#2C313A;stroke-width:1}
+              </style>
+            </defs>
+            <!-- arrows -->
+            <g stroke="#F26A1B" stroke-width="2" fill="#F26A1B">
+              <line x1="170" y1="68" x2="170" y2="84"/><polygon points="170,91 164,82 176,82"/>
+              <line x1="170" y1="150" x2="170" y2="166"/><polygon points="170,173 164,164 176,164"/>
+              <line x1="170" y1="232" x2="170" y2="248"/><polygon points="170,255 164,246 176,246"/>
+              <line x1="170" y1="314" x2="170" y2="330"/><polygon points="170,337 164,328 176,328"/>
+              <line x1="170" y1="396" x2="170" y2="412"/><polygon points="170,419 164,410 176,410"/>
+            </g>
+            <!-- 1 -->
+            <rect class="frm" x="20" y="10" width="300" height="56" rx="4"/>
+            <text class="fbl" x="170" y="35" text-anchor="middle">Вырезка заготовки</text>
+            <text class="fsub" x="170" y="52" text-anchor="middle">лазерный раскрой</text>
+            <!-- 2 -->
+            <rect class="frm" x="20" y="92" width="300" height="56" rx="4"/>
+            <text class="fbl" x="170" y="117" text-anchor="middle">Гибка</text>
+            <text class="fsub" x="170" y="134" text-anchor="middle">пресс</text>
+            <!-- 3 removed -->
+            <rect x="20" y="174" width="300" height="56" rx="4" fill="#15181d" stroke="#F26A1B" stroke-width="1.2" stroke-dasharray="5 4"/>
+            <text x="170" y="199" text-anchor="middle" font-family="'Saira Condensed',sans-serif" font-weight="700" font-size="17" fill="#8A8F99">Пробивка отверстий</text>
+            <line x1="86" y1="194" x2="254" y2="194" stroke="#F26A1B" stroke-width="2.5"/>
+            <text x="170" y="216" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="10" fill="#FF9E2C">убрали — экономия на оснастке</text>
+            <!-- 4 -->
+            <rect class="frm" x="20" y="256" width="300" height="56" rx="4"/>
+            <text class="fbl" x="170" y="281" text-anchor="middle">Калибровка</text>
+            <text class="fsub" x="170" y="298" text-anchor="middle">пресс</text>
+            <!-- 5 -->
+            <rect class="frm" x="20" y="338" width="300" height="56" rx="4"/>
+            <text class="fbl" x="170" y="363" text-anchor="middle">Мойка</text>
+            <text class="fsub" x="170" y="380" text-anchor="middle">машина моечная</text>
+            <!-- 6 -->
+            <rect class="frm" x="20" y="420" width="300" height="56" rx="4"/>
+            <text class="fbl" x="170" y="445" text-anchor="middle">Контроль ОТК</text>
+            <text class="fsub" x="170" y="462" text-anchor="middle">пост контроля</text>
+          </svg>
+        </div>
+        <div class="flow-cap">Оптимизация потока штамповки</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-crane" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-crane-title">
+    <button class="modal-close" data-close aria-label="Закрыть">×</button>
+    <div class="modal-body">
+      <div class="modal-info">
+        <span class="eyebrow">Грузоподъёмные механизмы · крановый комплекс</span>
+        <h2 class="modal-title" id="modal-crane-title" style="margin-top:16px">Крановые комплексы и лебёдки</h2>
+        <p class="modal-sub">Крановый комплекс для баз путевых машинных станций — работа по крановому пути при формировании рельсошпальных решёток.</p>
+        <div class="param-grid cols2">
+          <div class="param"><div class="v">45<span> т</span></div><div class="k">суммарная грузоподъёмность</div></div>
+          <div class="param"><div class="v">2×22,5<span> т</span></div><div class="k">грузоподъёмность крана</div></div>
+          <div class="param"><div class="v">2 крана</div><div class="k">в паре и раздельно</div></div>
+          <div class="param"><div class="v">гидро<span></span></div><div class="k">привод лебёдок и механизмов</div></div>
+        </div>
+      </div>
+      <div class="modal-fig-col">
+        <div class="modal-spec">
+          <div class="ms-head">Состав комплекса</div>
+          <ul>
+            <li>Крановый комплекс из двух кранов по 22,5 т</li>
+            <li>Работа в паре и раздельно по крановому пути</li>
+            <li>Лебёдки с гидроприводом сматывания и укладывания троса</li>
+            <li>Применение в базах путевых машинных станций</li>
+          </ul>
+        </div>
+        <figure class="spec-fig">
+          <img src="assets/case-crane-layout.png" alt="Компоновочная схема кранового комплекса">
+          <figcaption>Компоновочная схема комплекса</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-reverse" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-reverse-title">
+    <button class="modal-close" data-close aria-label="Закрыть">×</button>
+    <div class="modal-body">
+      <div class="modal-info">
+        <span class="eyebrow">Реверс-инжиниринг</span>
+        <h2 class="modal-title" id="modal-reverse-title" style="margin-top:16px">Восстановление КД и импортозамещение</h2>
+        <p class="modal-sub">Реверс изделий любой сложности: восстановление CAD, выпуск КД по ЕСКД, технологическая проработка под производство и подготовка «под ключ».</p>
+        <div class="param-grid">
+          <div class="param"><div class="v">200+</div><div class="k">проектов всего</div></div>
+          <div class="param"><div class="v">100+</div><div class="k">в машиностроении</div></div>
+          <div class="param"><div class="v">20+</div><div class="k">оборудование и оснастка</div></div>
+          <div class="param"><div class="v">ЕСКД</div><div class="k">выпуск КД</div></div>
+          <div class="param"><div class="v">CAE</div><div class="k">расчётная верификация</div></div>
+          <div class="param"><div class="v">под ключ</div><div class="k">подготовка производства</div></div>
+        </div>
+        <div class="modal-spec">
+          <div class="ms-head">Что реверсим</div>
+          <ul>
+            <li>Механические детали и узлы</li>
+            <li>Корпусные и литые изделия</li>
+            <li>Пластик и композитные материалы</li>
+            <li>Элементы оборудования и оснастки</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-fig-col">
+        <div class="gallery-head">Примеры работ</div>
+        <div class="rev-gallery">
+          <div class="rev-tile"><div class="img"><img src="assets/cat-plastic.png" alt="Пластмассовые и композитные детали"></div><div class="cap">Пластмассовые и композитные детали</div></div>
+          <div class="rev-tile"><div class="img"><img src="assets/cat-impellers.png" alt="Крыльчатки турбин"></div><div class="cap">Крыльчатки турбин</div></div>
+          <div class="rev-tile"><div class="img"><img src="assets/cat-castings.jpg" alt="Корпусные и литые детали"></div><div class="cap">Корпусные и литые детали</div></div>
+          <div class="rev-tile"><div class="img"><img src="assets/cat-brackets.png" alt="Кронштейны"></div><div class="cap">Кронштейны</div></div>
+          <div class="rev-tile"><div class="img"><img src="assets/cat-casting-tooling.jpg" alt="Литейная оснастка"></div><div class="cap">Литейная оснастка</div></div>
+          <div class="rev-tile"><div class="img"><img src="assets/cat-die-tooling.jpg" alt="Штамповая оснастка"></div><div class="cap">Штамповая оснастка</div></div>
+        </div>
+        <div class="modal-spec" style="margin-top:18px">
+          <div class="ms-head">Отрасли</div>
+          <ul>
+            <li>Общее машиностроение</li>
+            <li>Автокомпоненты</li>
+            <li>Медицинская техника (протезирование)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-gbc" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-gbc-title">
+    <button class="modal-close" data-close aria-label="Закрыть">×</button>
+    <div class="modal-body">
+      <div class="modal-info">
+        <span class="eyebrow">Сборочный инструмент</span>
+        <h2 class="modal-title" id="modal-gbc-title" style="margin-top:16px">Система тензорной затяжки ГБЦ</h2>
+        <p class="modal-sub">Автоматизированная система затяжки болтовых соединений с контролем и документированием — для сборки высокооборотных дизелей свыше 500 кВт.</p>
+        <div class="param-grid">
+          <div class="param"><div class="v">480<span> кН</span></div><div class="k">преднатяг шпилек ГБЦ</div></div>
+          <div class="param"><div class="v">±3<span> кН</span></div><div class="k">допуск на усилие преднатяжения</div></div>
+          <div class="param"><div class="v">4 гайки</div><div class="k">автозатяжка одновременно</div></div>
+          <div class="param"><div class="v">≥180°</div><div class="k">угол доворота от момента прилегания</div></div>
+          <div class="param"><div class="v">ПК</div><div class="k">документирование давления и угла</div></div>
+          <div class="param"><div class="v">IP44</div><div class="k">степень защиты</div></div>
+        </div>
+        <div class="modal-spec">
+          <div class="ms-head">Операции системы</div>
+          <ul>
+            <li>Преднатяжение шпилек с контролируемым и документируемым усилием</li>
+            <li>Контролируемая по углу одновременная затяжка 4 гаек ГБЦ</li>
+            <li>Полностью автоматизированные операции</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-fig-col">
+        <div class="gallery-head">Состав системы</div>
+        <div class="rev-gallery gbc-gallery">
+          <div class="rev-tile"><div class="img"><img src="assets/cat-assembly-tools.jpg" alt="Сборочный инструмент"></div><div class="cap">Сборочный инструмент</div></div>
+          <div class="rev-tile"><div class="img"><img src="assets/cat-hydro-station.jpg" alt="Гидростанция"></div><div class="cap">Гидростанция</div></div>
+          <div class="rev-tile"><div class="img"><img src="assets/cat-manipulator.jpg" alt="Манипулятор"></div><div class="cap">Манипулятор</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// header shrink
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>{hdr.classList.toggle('shrink',scrollY>40)},{passive:true});
+// mobile drawer
+const mt=document.getElementById('mt'),drawer=document.getElementById('drawer');
+mt.addEventListener('click',()=>drawer.classList.toggle('open'));
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>drawer.classList.remove('open')));
+// reveal
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+}else{
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+}
+// modal engine (reusable for all cards with [data-modal])
+let lastFocus=null;
+function openModal(id){
+  const ov=document.getElementById('modal-'+id);
+  if(!ov)return;
+  lastFocus=document.activeElement;
+  ov.hidden=false;
+  requestAnimationFrame(()=>ov.classList.add('show'));
+  document.body.classList.add('no-scroll');
+  const c=ov.querySelector('.modal-close'); if(c)c.focus();
+}
+function closeModal(ov){
+  ov.classList.remove('show');
+  document.body.classList.remove('no-scroll');
+  setTimeout(()=>{ov.hidden=true;},220);
+  if(lastFocus)lastFocus.focus();
+}
+document.querySelectorAll('[data-modal]').forEach(el=>{
+  const open=()=>openModal(el.getAttribute('data-modal'));
+  el.addEventListener('click',open);
+  el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});
+});
+document.querySelectorAll('.modal-overlay').forEach(ov=>{
+  ov.addEventListener('click',e=>{if(e.target===ov)closeModal(ov);});
+  ov.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>closeModal(ov)));
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){const ov=document.querySelector('.modal-overlay.show');if(ov)closeModal(ov);}
+});
+</script>
+<script src="assets/form.js" defer></script>
+</body>
+</html>

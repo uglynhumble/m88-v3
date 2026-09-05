@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#14171C"/>
+  <path d="M32 8 8 32l24 24 24-24z" fill="none" stroke="#F26A1B" stroke-width="3" opacity=".55"/>
+  <text x="32" y="41" text-anchor="middle" font-family="'Saira Condensed','Arial Narrow',Arial,sans-serif"
+        font-size="28" font-weight="700" fill="#FF9E2C" letter-spacing="-.5">M88</text>
+</svg>

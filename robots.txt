@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /storage/
+Disallow: /send.php
+
+Sitemap: https://m88.su/sitemap.xml

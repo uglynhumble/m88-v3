@@ -1,0 +1,40 @@
+# М88 — пример блока для nginx (если сайт не на Apache).
+server {
+    listen 443 ssl http2;
+    server_name m88.su;
+    root /var/www/m88.su;
+    index index.html index.php;
+    charset utf-8;
+    client_max_body_size 25m;
+
+    # /press-formy -> /press-formy/
+    rewrite ^/press-formy$ /press-formy/ permanent;
+
+    location / { try_files $uri $uri/ =404; }
+
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_read_timeout 120s;
+    }
+
+    location ^~ /storage/ { deny all; return 403; }
+    location = /config.php { deny all; return 403; }
+    location ~ /\.(ht|user)  { deny all; return 403; }
+
+    error_page 404 /404.html;
+
+    location ~* \.(png|jpe?g|svg|webp|woff2?)$ { expires 6M; add_header Cache-Control "public"; }
+    location ~* \.(css|js)$ { expires 1M; add_header Cache-Control "public"; }
+
+    add_header X-Content-Type-Options nosniff always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+    add_header X-Frame-Options SAMEORIGIN always;
+}
+
+server {
+    listen 80;
+    server_name m88.su www.m88.su;
+    return 301 https://m88.su$request_uri;
+}
