@@ -17,7 +17,9 @@
   var MAX_FILES = 5;
   // Общий предел вложений. Хостинг может задать свой, объявив
   // window.M88_MAX_TOTAL_MB = 3.5 до подключения этого файла (лимит Vercel).
-  var MAX_TOTAL = (window.M88_MAX_TOTAL_MB || 20) * 1024 * 1024;
+  // Vercel Functions принимают запросы размером до 4,5 МБ; оставляем запас
+  // на поля формы и multipart-заголовки.
+  var MAX_TOTAL = (window.M88_MAX_TOTAL_MB || 3.5) * 1024 * 1024;
   var ALLOWED = ['pdf', 'dwg', 'dxf', 'step', 'stp', 'stl', 'iges', 'igs', 'x_t',
     'sldprt', 'sldasm', 'zip', 'rar', '7z', 'jpg', 'jpeg', 'png',
     'doc', 'docx', 'xls', 'xlsx'];

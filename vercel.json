@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    { "source": "/send.php", "destination": "/api/send" },
+    { "source": "/config.php", "destination": "/404.html" }
+  ],
+  "functions": {
+    "api/send.js": {
+      "maxDuration": 30
+    }
+  }
+}
