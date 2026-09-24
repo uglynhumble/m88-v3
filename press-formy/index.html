@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Inter:wght@400;500;600;700&amp;family=Saira+Condensed:wght@600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260924-3">
   <link rel="stylesheet" href="../assets/form.css">
 <script>document.documentElement.className+=" js";</script>
 </head>
@@ -149,33 +149,574 @@
           <p>Показываем не случайную подборку фотографий, а результат вместе с пресс-формой, на которой он получен. Так виден реальный масштаб и характер выполненной работы.</p>
         </div>
 
-        <div class="project-catalog">
-          <article class="project-story reveal">
-            <header class="project-header"><span class="project-number">ПРОЕКТ / 01</span><div><h3>Технические кронштейны</h3><p>Комплект готовых деталей и рабочие зоны пресс-формы.</p></div><span class="project-status">ИЗГОТОВЛЕНО</span></header>
-            <div class="project-chain">
-              <figure class="product-shot"><img src="../assets/project-brackets-product.png" alt="Комплект готовых технических кронштейнов"><figcaption><b>01</b><span>ГОТОВЫЕ<br>ИЗДЕЛИЯ</span></figcaption></figure>
-              <div class="chain-arrow" aria-hidden="true"><span>ИЗДЕЛИЕ</span><b>→</b><span>ПРЕСС-ФОРМА</span></div>
-              <div class="mold-pair"><figure><img src="../assets/project-brackets-mold-a.png" alt="Рабочая часть пресс-формы для технических кронштейнов"><figcaption>РАБОЧАЯ ЧАСТЬ / A</figcaption></figure><figure><img src="../assets/project-brackets-mold-b.png" alt="Ответная часть пресс-формы для технических кронштейнов"><figcaption>РАБОЧАЯ ЧАСТЬ / B</figcaption></figure></div>
+        <div class="project-carousel-bar reveal">
+          <p><span>36</span> примеров оснастки и изделий</p>
+          <div class="project-carousel-controls">
+            <button type="button" data-project-prev aria-controls="project-carousel" aria-label="Предыдущие примеры">←</button>
+            <button type="button" data-project-next aria-controls="project-carousel" aria-label="Следующие примеры">→</button>
+          </div>
+        </div>
+        <div class="project-catalog" id="project-carousel" data-project-carousel tabindex="0" aria-label="Горизонтальный список примеров">
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Крыльчатка-1" data-project-title="Крыльчатка-1" data-project-description="Крыльчатка перемещает воздушный поток внутри вентиляционного или охлаждающего узла. Геометрия лопастей обеспечивает направленную подачу воздуха и стабильную работу механизма.">
+            <div class="project-card-media project-card-gallery photo-count-4">
+              <a href="../assets/examples-photos/slide-17/photo-01.jpg" target="_blank" rel="noopener" aria-label="Крыльчатка-1, фото 1"><img src="../assets/examples-photos/slide-17/photo-01.jpg" alt="Крыльчатка-1: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-17/photo-02.jpg" target="_blank" rel="noopener" aria-label="Крыльчатка-1, фото 2"><img src="../assets/examples-photos/slide-17/photo-02.jpg" alt="Крыльчатка-1: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-17/photo-03.jpg" target="_blank" rel="noopener" aria-label="Крыльчатка-1, фото 3"><img src="../assets/examples-photos/slide-17/photo-03.jpg" alt="Крыльчатка-1: фото 3" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-17/photo-04.jpg" target="_blank" rel="noopener" aria-label="Крыльчатка-1, фото 4"><img src="../assets/examples-photos/slide-17/photo-04.jpg" alt="Крыльчатка-1: фото 4" loading="lazy" decoding="async"></a>
+              <span>01</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 01</span><span>ПРЕСС-ФОРМЫ</span></div>
+              <h3>Крыльчатка-1</h3>
+              <p>Пресс-форма и готовое изделие.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
             </div>
           </article>
 
-          <article class="project-story reveal">
-            <header class="project-header"><span class="project-number">ПРОЕКТ / 02</span><div><h3>Сетчатый лоток</h3><p>Контрольный образец и оснастка после пробного цикла.</p></div><span class="project-status">ИЗГОТОВЛЕНО</span></header>
-            <div class="project-chain reverse">
-              <figure class="product-shot"><img src="../assets/project-tray-product.png" alt="Готовый сетчатый лоток"><figcaption><b>02</b><span>ГОТОВОЕ<br>ИЗДЕЛИЕ</span></figcaption></figure>
-              <div class="chain-arrow" aria-hidden="true"><span>ИЗДЕЛИЕ</span><b>→</b><span>ПРЕСС-ФОРМА</span></div>
-              <div class="mold-pair"><figure><img src="../assets/project-tray-mold-a.png" alt="Первая часть пресс-формы для сетчатого лотка"><figcaption>ИСПЫТАНИЕ / T0</figcaption></figure><figure><img src="../assets/project-tray-mold-b.png" alt="Вторая часть пресс-формы для сетчатого лотка"><figcaption>ДОРАБОТКА / T1</figcaption></figure></div>
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Кожух вентилятора" data-project-title="Кожух вентилятора" data-project-description="Кожух вентилятора закрывает вращающийся узел, направляет воздушный поток и служит основанием для крепления деталей системы.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-18/photo-01.jpg" target="_blank" rel="noopener" aria-label="Кожух вентилятора, фото 1"><img src="../assets/examples-photos/slide-18/photo-01.jpg" alt="Кожух вентилятора: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-18/photo-02.jpg" target="_blank" rel="noopener" aria-label="Кожух вентилятора, фото 2"><img src="../assets/examples-photos/slide-18/photo-02.jpg" alt="Кожух вентилятора: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-18/photo-03.jpg" target="_blank" rel="noopener" aria-label="Кожух вентилятора, фото 3"><img src="../assets/examples-photos/slide-18/photo-03.jpg" alt="Кожух вентилятора: фото 3" loading="lazy" decoding="async"></a>
+              <span>02</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 02</span><span>ПРЕСС-ФОРМЫ</span></div>
+              <h3>Кожух вентилятора</h3>
+              <p>Рабочие части формы и отлитые детали.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
             </div>
           </article>
 
-          <article class="project-story reveal">
-            <header class="project-header"><span class="project-number">ПРОЕКТ / 03</span><div><h3>Кольцевой компонент</h3><p>Серия готовых изделий и пресс-форма на испытаниях.</p></div><span class="project-status">ИЗГОТОВЛЕНО</span></header>
-            <div class="project-chain">
-              <figure class="product-shot"><img src="../assets/project-rings-product.png" alt="Готовые кольцевые компоненты"><figcaption><b>03</b><span>ГОТОВЫЕ<br>ИЗДЕЛИЯ</span></figcaption></figure>
-              <div class="chain-arrow" aria-hidden="true"><span>ИЗДЕЛИЕ</span><b>→</b><span>ИСПЫТАНИЕ</span></div>
-              <div class="mold-pair"><figure><img src="../assets/project-rings-mold-a.png" alt="Пресс-форма для кольцевого компонента"><figcaption>ПРОБНЫЙ ЦИКЛ / T0</figcaption></figure><figure><img src="../assets/project-rings-mold-b.png" alt="Пресс-форма после корректировки"><figcaption>КОНТРОЛЬ / T1</figcaption></figure></div>
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Аптечка" data-project-title="Аптечка" data-project-description="Корпус аптечки предназначен для хранения и переноски средств первой помощи. Он защищает содержимое и помогает компактно организовать необходимые принадлежности.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-19/photo-01.jpg" target="_blank" rel="noopener" aria-label="Аптечка, фото 1"><img src="../assets/examples-photos/slide-19/photo-01.jpg" alt="Аптечка: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-19/photo-02.jpg" target="_blank" rel="noopener" aria-label="Аптечка, фото 2"><img src="../assets/examples-photos/slide-19/photo-02.jpg" alt="Аптечка: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-19/photo-03.jpg" target="_blank" rel="noopener" aria-label="Аптечка, фото 3"><img src="../assets/examples-photos/slide-19/photo-03.jpg" alt="Аптечка: фото 3" loading="lazy" decoding="async"></a>
+              <span>03</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 03</span><span>ПРЕСС-ФОРМЫ</span></div>
+              <h3>Аптечка</h3>
+              <p>Оснастка и образец готового корпуса.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
             </div>
           </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Седловина" data-project-title="Седловина" data-project-description="Седловина служит посадочным и фиксирующим элементом в сборочном узле. Она обеспечивает точное сопряжение детали с ответной частью конструкции.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-20/photo-01.jpg" target="_blank" rel="noopener" aria-label="Седловина, фото 1"><img src="../assets/examples-photos/slide-20/photo-01.jpg" alt="Седловина: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-20/photo-02.jpg" target="_blank" rel="noopener" aria-label="Седловина, фото 2"><img src="../assets/examples-photos/slide-20/photo-02.jpg" alt="Седловина: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-20/photo-03.jpg" target="_blank" rel="noopener" aria-label="Седловина, фото 3"><img src="../assets/examples-photos/slide-20/photo-03.jpg" alt="Седловина: фото 3" loading="lazy" decoding="async"></a>
+              <span>04</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 04</span><span>ПРЕСС-ФОРМЫ</span></div>
+              <h3>Седловина</h3>
+              <p>Пресс-форма и контрольные образцы.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Пресс-форма и изделие" data-project-title="Пресс-форма и изделие" data-project-description="Пластиковая деталь сложной геометрии используется как конструктивный элемент сборочного узла. Форма обеспечивает заданную посадку, фиксацию и повторяемость размеров.">
+            <div class="project-card-media project-card-gallery photo-count-4">
+              <a href="../assets/examples-photos/slide-21/photo-01.jpg" target="_blank" rel="noopener" aria-label="Пресс-форма и изделие, фото 1"><img src="../assets/examples-photos/slide-21/photo-01.jpg" alt="Пресс-форма и изделие: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-21/photo-02.jpg" target="_blank" rel="noopener" aria-label="Пресс-форма и изделие, фото 2"><img src="../assets/examples-photos/slide-21/photo-02.jpg" alt="Пресс-форма и изделие: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-21/photo-03.jpg" target="_blank" rel="noopener" aria-label="Пресс-форма и изделие, фото 3"><img src="../assets/examples-photos/slide-21/photo-03.jpg" alt="Пресс-форма и изделие: фото 3" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-21/photo-04.jpg" target="_blank" rel="noopener" aria-label="Пресс-форма и изделие, фото 4"><img src="../assets/examples-photos/slide-21/photo-04.jpg" alt="Пресс-форма и изделие: фото 4" loading="lazy" decoding="async"></a>
+              <span>05</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 05</span><span>ПРЕСС-ФОРМЫ</span></div>
+              <h3>Пресс-форма и изделие</h3>
+              <p>Рабочие части формы и образец детали.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Компоненты автомобиля" data-project-title="Компоненты автомобиля" data-project-description="Подборка автомобильных компонентов включает детали салона и кузовной обвязки. Они закрывают технические узлы, обеспечивают крепление и формируют готовую поверхность интерьера.">
+            <div class="project-card-media project-card-gallery photo-count-1">
+              <a href="../assets/examples-photos/slide-23/photo-01.png" target="_blank" rel="noopener" aria-label="Компоненты автомобиля, фото 1"><img src="../assets/examples-photos/slide-23/photo-01.png" alt="Компоненты автомобиля: фото 1" loading="lazy" decoding="async"></a>
+              <span>06</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 06</span><span>АВТОКОМПОНЕНТЫ</span></div>
+              <h3>Компоненты автомобиля</h3>
+              <p>Обзор изделий из портфолио.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: B-стойка и ящик для хранения" data-project-title="B-стойка и ящик для хранения" data-project-description="Накладка B-стойки закрывает силовой элемент кузова и формирует аккуратную поверхность салона. Ящик предназначен для компактного хранения вещей в автомобиле.">
+            <div class="project-card-media project-card-gallery photo-count-6">
+              <a href="../assets/examples-photos/slide-24/photo-01.jpg" target="_blank" rel="noopener" aria-label="B-стойка и ящик для хранения, фото 1"><img src="../assets/examples-photos/slide-24/photo-01.jpg" alt="B-стойка и ящик для хранения: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-24/photo-02.jpg" target="_blank" rel="noopener" aria-label="B-стойка и ящик для хранения, фото 2"><img src="../assets/examples-photos/slide-24/photo-02.jpg" alt="B-стойка и ящик для хранения: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-24/photo-03.jpg" target="_blank" rel="noopener" aria-label="B-стойка и ящик для хранения, фото 3"><img src="../assets/examples-photos/slide-24/photo-03.jpg" alt="B-стойка и ящик для хранения: фото 3" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-24/photo-04.jpg" target="_blank" rel="noopener" aria-label="B-стойка и ящик для хранения, фото 4"><img src="../assets/examples-photos/slide-24/photo-04.jpg" alt="B-стойка и ящик для хранения: фото 4" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-24/photo-05.jpg" target="_blank" rel="noopener" aria-label="B-стойка и ящик для хранения, фото 5"><img src="../assets/examples-photos/slide-24/photo-05.jpg" alt="B-стойка и ящик для хранения: фото 5" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-24/photo-06.jpg" target="_blank" rel="noopener" aria-label="B-стойка и ящик для хранения, фото 6"><img src="../assets/examples-photos/slide-24/photo-06.jpg" alt="B-стойка и ящик для хранения: фото 6" loading="lazy" decoding="async"></a>
+              <span>07</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 07</span><span>АВТОКОМПОНЕНТЫ</span></div>
+              <h3>B-стойка и ящик для хранения</h3>
+              <p>3D-модели, пресс-формы и готовые изделия.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Детали передней двери" data-project-title="Детали передней двери" data-project-description="Боковой щиток защищает внутренние элементы двери, а кронштейн фиксирует ручку-углубление. Детали обеспечивают безопасную и аккуратную сборку дверного модуля.">
+            <div class="project-card-media project-card-gallery photo-count-6">
+              <a href="../assets/examples-photos/slide-25/photo-01.jpg" target="_blank" rel="noopener" aria-label="Детали передней двери, фото 1"><img src="../assets/examples-photos/slide-25/photo-01.jpg" alt="Детали передней двери: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-25/photo-02.jpg" target="_blank" rel="noopener" aria-label="Детали передней двери, фото 2"><img src="../assets/examples-photos/slide-25/photo-02.jpg" alt="Детали передней двери: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-25/photo-03.jpg" target="_blank" rel="noopener" aria-label="Детали передней двери, фото 3"><img src="../assets/examples-photos/slide-25/photo-03.jpg" alt="Детали передней двери: фото 3" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-25/photo-04.jpg" target="_blank" rel="noopener" aria-label="Детали передней двери, фото 4"><img src="../assets/examples-photos/slide-25/photo-04.jpg" alt="Детали передней двери: фото 4" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-25/photo-05.jpg" target="_blank" rel="noopener" aria-label="Детали передней двери, фото 5"><img src="../assets/examples-photos/slide-25/photo-05.jpg" alt="Детали передней двери: фото 5" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-25/photo-06.jpg" target="_blank" rel="noopener" aria-label="Детали передней двери, фото 6"><img src="../assets/examples-photos/slide-25/photo-06.jpg" alt="Детали передней двери: фото 6" loading="lazy" decoding="async"></a>
+              <span>08</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 08</span><span>АВТОКОМПОНЕНТЫ</span></div>
+              <h3>Детали передней двери</h3>
+              <p>Боковой щиток и кронштейн ручки-углубления.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Мультимедиаплеер" data-project-title="Мультимедиаплеер" data-project-description="Корпус мультимедиаплеера удерживает электронные компоненты и органы управления. Он защищает внутренние узлы и обеспечивает точную установку устройства в панели.">
+            <div class="project-card-media project-card-gallery photo-count-6">
+              <a href="../assets/examples-photos/slide-26/photo-01.jpg" target="_blank" rel="noopener" aria-label="Мультимедиаплеер, фото 1"><img src="../assets/examples-photos/slide-26/photo-01.jpg" alt="Мультимедиаплеер: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-26/photo-02.jpg" target="_blank" rel="noopener" aria-label="Мультимедиаплеер, фото 2"><img src="../assets/examples-photos/slide-26/photo-02.jpg" alt="Мультимедиаплеер: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-26/photo-03.jpg" target="_blank" rel="noopener" aria-label="Мультимедиаплеер, фото 3"><img src="../assets/examples-photos/slide-26/photo-03.jpg" alt="Мультимедиаплеер: фото 3" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-26/photo-04.jpg" target="_blank" rel="noopener" aria-label="Мультимедиаплеер, фото 4"><img src="../assets/examples-photos/slide-26/photo-04.jpg" alt="Мультимедиаплеер: фото 4" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-26/photo-05.jpg" target="_blank" rel="noopener" aria-label="Мультимедиаплеер, фото 5"><img src="../assets/examples-photos/slide-26/photo-05.jpg" alt="Мультимедиаплеер: фото 5" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-26/photo-06.jpg" target="_blank" rel="noopener" aria-label="Мультимедиаплеер, фото 6"><img src="../assets/examples-photos/slide-26/photo-06.jpg" alt="Мультимедиаплеер: фото 6" loading="lazy" decoding="async"></a>
+              <span>09</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 09</span><span>АВТОКОМПОНЕНТЫ</span></div>
+              <h3>Мультимедиаплеер</h3>
+              <p>Оснастка, детали и собранный корпус.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Поручень и накладка двери" data-project-title="Поручень и накладка двери" data-project-description="Вспомогательный поручень помогает пассажиру удерживаться и садиться в автомобиль. Накладка закрывает крепления и формирует завершённую поверхность двери.">
+            <div class="project-card-media project-card-gallery photo-count-6">
+              <a href="../assets/examples-photos/slide-27/photo-01.jpg" target="_blank" rel="noopener" aria-label="Поручень и накладка двери, фото 1"><img src="../assets/examples-photos/slide-27/photo-01.jpg" alt="Поручень и накладка двери: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-27/photo-02.jpg" target="_blank" rel="noopener" aria-label="Поручень и накладка двери, фото 2"><img src="../assets/examples-photos/slide-27/photo-02.jpg" alt="Поручень и накладка двери: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-27/photo-03.jpg" target="_blank" rel="noopener" aria-label="Поручень и накладка двери, фото 3"><img src="../assets/examples-photos/slide-27/photo-03.jpg" alt="Поручень и накладка двери: фото 3" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-27/photo-04.jpg" target="_blank" rel="noopener" aria-label="Поручень и накладка двери, фото 4"><img src="../assets/examples-photos/slide-27/photo-04.jpg" alt="Поручень и накладка двери: фото 4" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-27/photo-05.jpg" target="_blank" rel="noopener" aria-label="Поручень и накладка двери, фото 5"><img src="../assets/examples-photos/slide-27/photo-05.jpg" alt="Поручень и накладка двери: фото 5" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-27/photo-06.jpg" target="_blank" rel="noopener" aria-label="Поручень и накладка двери, фото 6"><img src="../assets/examples-photos/slide-27/photo-06.jpg" alt="Поручень и накладка двери: фото 6" loading="lazy" decoding="async"></a>
+              <span>10</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 10</span><span>АВТОКОМПОНЕНТЫ</span></div>
+              <h3>Поручень и накладка двери</h3>
+              <p>Пресс-формы и готовые детали салона.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Тормозной суппорт и переключатель" data-project-title="Тормозной суппорт и переключатель" data-project-description="Компоненты используются в тормозном и управляющем узлах автомобиля. Они передают усилие, защищают механизм и обеспечивают точное срабатывание переключателя.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-28/photo-01.jpg" target="_blank" rel="noopener" aria-label="Тормозной суппорт и переключатель, фото 1"><img src="../assets/examples-photos/slide-28/photo-01.jpg" alt="Тормозной суппорт и переключатель: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-28/photo-02.jpg" target="_blank" rel="noopener" aria-label="Тормозной суппорт и переключатель, фото 2"><img src="../assets/examples-photos/slide-28/photo-02.jpg" alt="Тормозной суппорт и переключатель: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-28/photo-03.jpg" target="_blank" rel="noopener" aria-label="Тормозной суппорт и переключатель, фото 3"><img src="../assets/examples-photos/slide-28/photo-03.jpg" alt="Тормозной суппорт и переключатель: фото 3" loading="lazy" decoding="async"></a>
+              <span>11</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 11</span><span>АВТОКОМПОНЕНТЫ</span></div>
+              <h3>Тормозной суппорт и переключатель</h3>
+              <p>Автомобильные детали сложной геометрии.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Автомобильные компоненты" data-project-title="Автомобильные компоненты" data-project-description="Серия автомобильных деталей предназначена для облицовки, крепления и защиты внутренних узлов. Каждая деталь рассчитана на точную посадку в составе серийной сборки.">
+            <div class="project-card-media project-card-gallery photo-count-1">
+              <a href="../assets/examples-photos/slide-29/photo-01.jpg" target="_blank" rel="noopener" aria-label="Автомобильные компоненты, фото 1"><img src="../assets/examples-photos/slide-29/photo-01.jpg" alt="Автомобильные компоненты: фото 1" loading="lazy" decoding="async"></a>
+              <span>12</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 12</span><span>АВТОКОМПОНЕНТЫ</span></div>
+              <h3>Автомобильные компоненты</h3>
+              <p>Подборка серийных пластиковых изделий.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Корпус органайзера" data-project-title="Корпус органайзера" data-project-description="Корпус органайзера разделяет внутреннее пространство на функциональные секции. Он помогает хранить и быстро находить мелкие предметы.">
+            <div class="project-card-media project-card-gallery photo-count-2">
+              <a href="../assets/examples-photos/slide-30/photo-01.jpg" target="_blank" rel="noopener" aria-label="Корпус органайзера, фото 1"><img src="../assets/examples-photos/slide-30/photo-01.jpg" alt="Корпус органайзера: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-30/photo-02.jpg" target="_blank" rel="noopener" aria-label="Корпус органайзера, фото 2"><img src="../assets/examples-photos/slide-30/photo-02.jpg" alt="Корпус органайзера: фото 2" loading="lazy" decoding="async"></a>
+              <span>13</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 13</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Корпус органайзера</h3>
+              <p>Готовое изделие и рабочая часть формы.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Опорный элемент" data-project-title="Опорный элемент" data-project-description="Опорный элемент воспринимает нагрузку и фиксирует сопряжённые детали в заданном положении. Рёбра жёсткости помогают сохранять геометрию изделия.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-31/photo-01.jpg" target="_blank" rel="noopener" aria-label="Опорный элемент, фото 1"><img src="../assets/examples-photos/slide-31/photo-01.jpg" alt="Опорный элемент: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-31/photo-02.jpg" target="_blank" rel="noopener" aria-label="Опорный элемент, фото 2"><img src="../assets/examples-photos/slide-31/photo-02.jpg" alt="Опорный элемент: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-31/photo-03.jpg" target="_blank" rel="noopener" aria-label="Опорный элемент, фото 3"><img src="../assets/examples-photos/slide-31/photo-03.jpg" alt="Опорный элемент: фото 3" loading="lazy" decoding="async"></a>
+              <span>14</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 14</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Опорный элемент</h3>
+              <p>Образец детали и испытание пресс-формы.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Многоместная пресс-форма" data-project-title="Многоместная пресс-форма" data-project-description="Многоместная пресс-форма выпускает несколько одинаковых технических деталей за один цикл. Такое решение повышает производительность серийного производства.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-32/photo-01.jpg" target="_blank" rel="noopener" aria-label="Многоместная пресс-форма, фото 1"><img src="../assets/examples-photos/slide-32/photo-01.jpg" alt="Многоместная пресс-форма: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-32/photo-02.jpg" target="_blank" rel="noopener" aria-label="Многоместная пресс-форма, фото 2"><img src="../assets/examples-photos/slide-32/photo-02.jpg" alt="Многоместная пресс-форма: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-32/photo-03.jpg" target="_blank" rel="noopener" aria-label="Многоместная пресс-форма, фото 3"><img src="../assets/examples-photos/slide-32/photo-03.jpg" alt="Многоместная пресс-форма: фото 3" loading="lazy" decoding="async"></a>
+              <span>15</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 15</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Многоместная пресс-форма</h3>
+              <p>Рабочие полости и собранная оснастка.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Перфорированный лоток" data-project-title="Перфорированный лоток" data-project-description="Перфорированный лоток предназначен для хранения, сортировки или транспортировки изделий. Отверстия снижают массу и обеспечивают вентиляцию или отвод жидкости.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-33/photo-01.jpg" target="_blank" rel="noopener" aria-label="Перфорированный лоток, фото 1"><img src="../assets/examples-photos/slide-33/photo-01.jpg" alt="Перфорированный лоток: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-33/photo-02.jpg" target="_blank" rel="noopener" aria-label="Перфорированный лоток, фото 2"><img src="../assets/examples-photos/slide-33/photo-02.jpg" alt="Перфорированный лоток: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-33/photo-03.jpg" target="_blank" rel="noopener" aria-label="Перфорированный лоток, фото 3"><img src="../assets/examples-photos/slide-33/photo-03.jpg" alt="Перфорированный лоток: фото 3" loading="lazy" decoding="async"></a>
+              <span>16</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 16</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Перфорированный лоток</h3>
+              <p>Изделие и рабочие части оснастки.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Защитный корпус" data-project-title="Защитный корпус" data-project-description="Защитный корпус закрывает внутренний узел от механических воздействий и загрязнений. Его геометрия обеспечивает точную установку и доступ к креплениям.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-34/photo-01.jpg" target="_blank" rel="noopener" aria-label="Защитный корпус, фото 1"><img src="../assets/examples-photos/slide-34/photo-01.jpg" alt="Защитный корпус: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-34/photo-02.jpg" target="_blank" rel="noopener" aria-label="Защитный корпус, фото 2"><img src="../assets/examples-photos/slide-34/photo-02.jpg" alt="Защитный корпус: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-34/photo-03.jpg" target="_blank" rel="noopener" aria-label="Защитный корпус, фото 3"><img src="../assets/examples-photos/slide-34/photo-03.jpg" alt="Защитный корпус: фото 3" loading="lazy" decoding="async"></a>
+              <span>17</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 17</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Защитный корпус</h3>
+              <p>Контроль геометрии и пресс-форма.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Крышка контейнера" data-project-title="Крышка контейнера" data-project-description="Крышка закрывает контейнер и удерживает содержимое внутри. Посадочный контур обеспечивает плотное совмещение с корпусом.">
+            <div class="project-card-media project-card-gallery photo-count-4">
+              <a href="../assets/examples-photos/slide-35/photo-01.jpg" target="_blank" rel="noopener" aria-label="Крышка контейнера, фото 1"><img src="../assets/examples-photos/slide-35/photo-01.jpg" alt="Крышка контейнера: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-35/photo-02.jpg" target="_blank" rel="noopener" aria-label="Крышка контейнера, фото 2"><img src="../assets/examples-photos/slide-35/photo-02.jpg" alt="Крышка контейнера: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-35/photo-03.jpg" target="_blank" rel="noopener" aria-label="Крышка контейнера, фото 3"><img src="../assets/examples-photos/slide-35/photo-03.jpg" alt="Крышка контейнера: фото 3" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-35/photo-04.jpg" target="_blank" rel="noopener" aria-label="Крышка контейнера, фото 4"><img src="../assets/examples-photos/slide-35/photo-04.jpg" alt="Крышка контейнера: фото 4" loading="lazy" decoding="async"></a>
+              <span>18</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 18</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Крышка контейнера</h3>
+              <p>Изделия разных цветов и рабочая полость.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Пластиковый контейнер" data-project-title="Пластиковый контейнер" data-project-description="Пластиковый контейнер предназначен для хранения и транспортировки изделий или материалов. Жёсткие стенки защищают содержимое и сохраняют форму ёмкости.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-36/photo-01.jpg" target="_blank" rel="noopener" aria-label="Пластиковый контейнер, фото 1"><img src="../assets/examples-photos/slide-36/photo-01.jpg" alt="Пластиковый контейнер: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-36/photo-02.jpg" target="_blank" rel="noopener" aria-label="Пластиковый контейнер, фото 2"><img src="../assets/examples-photos/slide-36/photo-02.jpg" alt="Пластиковый контейнер: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-36/photo-03.jpg" target="_blank" rel="noopener" aria-label="Пластиковый контейнер, фото 3"><img src="../assets/examples-photos/slide-36/photo-03.jpg" alt="Пластиковый контейнер: фото 3" loading="lazy" decoding="async"></a>
+              <span>19</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 19</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Пластиковый контейнер</h3>
+              <p>Готовое изделие и оснастка.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Каркасное изделие" data-project-title="Каркасное изделие" data-project-description="Каркасная деталь служит несущей основой для установки и соединения других элементов. Открытая структура снижает массу при сохранении необходимой жёсткости.">
+            <div class="project-card-media project-card-gallery photo-count-2">
+              <a href="../assets/examples-photos/slide-37/photo-01.jpg" target="_blank" rel="noopener" aria-label="Каркасное изделие, фото 1"><img src="../assets/examples-photos/slide-37/photo-01.jpg" alt="Каркасное изделие: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-37/photo-02.jpg" target="_blank" rel="noopener" aria-label="Каркасное изделие, фото 2"><img src="../assets/examples-photos/slide-37/photo-02.jpg" alt="Каркасное изделие: фото 2" loading="lazy" decoding="async"></a>
+              <span>20</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 20</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Каркасное изделие</h3>
+              <p>Пробный образец и пресс-форма.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Технические детали" data-project-title="Технические детали" data-project-description="Комплект технических деталей применяется для соединения, фиксации и позиционирования элементов механизма. Точная геометрия обеспечивает повторяемую сборку.">
+            <div class="project-card-media project-card-gallery photo-count-2">
+              <a href="../assets/examples-photos/slide-38/photo-01.jpg" target="_blank" rel="noopener" aria-label="Технические детали, фото 1"><img src="../assets/examples-photos/slide-38/photo-01.jpg" alt="Технические детали: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-38/photo-02.jpg" target="_blank" rel="noopener" aria-label="Технические детали, фото 2"><img src="../assets/examples-photos/slide-38/photo-02.jpg" alt="Технические детали: фото 2" loading="lazy" decoding="async"></a>
+              <span>21</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 21</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Технические детали</h3>
+              <p>Комплект отливок и рабочие каналы формы.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Пластиковая ёмкость" data-project-title="Пластиковая ёмкость" data-project-description="Пластиковая ёмкость предназначена для хранения или дозированной подачи содержимого. Корпус защищает материал и облегчает его транспортировку.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-39/photo-01.jpg" target="_blank" rel="noopener" aria-label="Пластиковая ёмкость, фото 1"><img src="../assets/examples-photos/slide-39/photo-01.jpg" alt="Пластиковая ёмкость: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-39/photo-02.jpg" target="_blank" rel="noopener" aria-label="Пластиковая ёмкость, фото 2"><img src="../assets/examples-photos/slide-39/photo-02.jpg" alt="Пластиковая ёмкость: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-39/photo-03.jpg" target="_blank" rel="noopener" aria-label="Пластиковая ёмкость, фото 3"><img src="../assets/examples-photos/slide-39/photo-03.jpg" alt="Пластиковая ёмкость: фото 3" loading="lazy" decoding="async"></a>
+              <span>22</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 22</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Пластиковая ёмкость</h3>
+              <p>Пробные отливки и пресс-форма.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Резьбовые элементы" data-project-title="Резьбовые элементы" data-project-description="Резьбовые элементы соединяют детали и обеспечивают разъёмную фиксацию узла. Резьба позволяет точно регулировать усилие затяжки.">
+            <div class="project-card-media project-card-gallery photo-count-2">
+              <a href="../assets/examples-photos/slide-40/photo-01.jpg" target="_blank" rel="noopener" aria-label="Резьбовые элементы, фото 1"><img src="../assets/examples-photos/slide-40/photo-01.jpg" alt="Резьбовые элементы: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-40/photo-02.jpg" target="_blank" rel="noopener" aria-label="Резьбовые элементы, фото 2"><img src="../assets/examples-photos/slide-40/photo-02.jpg" alt="Резьбовые элементы: фото 2" loading="lazy" decoding="async"></a>
+              <span>23</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 23</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Резьбовые элементы</h3>
+              <p>Многоместная форма и готовые детали.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Пластиковая крышка" data-project-title="Пластиковая крышка" data-project-description="Пластиковая крышка закрывает корпус или ёмкость и защищает содержимое от загрязнений. Посадочные элементы удерживают её в рабочем положении.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-41/photo-01.jpg" target="_blank" rel="noopener" aria-label="Пластиковая крышка, фото 1"><img src="../assets/examples-photos/slide-41/photo-01.jpg" alt="Пластиковая крышка: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-41/photo-02.jpg" target="_blank" rel="noopener" aria-label="Пластиковая крышка, фото 2"><img src="../assets/examples-photos/slide-41/photo-02.jpg" alt="Пластиковая крышка: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-41/photo-03.jpg" target="_blank" rel="noopener" aria-label="Пластиковая крышка, фото 3"><img src="../assets/examples-photos/slide-41/photo-03.jpg" alt="Пластиковая крышка: фото 3" loading="lazy" decoding="async"></a>
+              <span>24</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 24</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Пластиковая крышка</h3>
+              <p>Образцы и испытание оснастки.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Пластиковый поручень" data-project-title="Пластиковый поручень" data-project-description="Пластиковый поручень служит удобной точкой захвата и помогает безопасно удерживаться. Усиленная геометрия рассчитана на повторяющуюся эксплуатационную нагрузку.">
+            <div class="project-card-media project-card-gallery photo-count-2">
+              <a href="../assets/examples-photos/slide-42/photo-01.jpg" target="_blank" rel="noopener" aria-label="Пластиковый поручень, фото 1"><img src="../assets/examples-photos/slide-42/photo-01.jpg" alt="Пластиковый поручень: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-42/photo-02.jpg" target="_blank" rel="noopener" aria-label="Пластиковый поручень, фото 2"><img src="../assets/examples-photos/slide-42/photo-02.jpg" alt="Пластиковый поручень: фото 2" loading="lazy" decoding="async"></a>
+              <span>25</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 25</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Пластиковый поручень</h3>
+              <p>Отливка с литниковой системой и форма.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Комплект деталей" data-project-title="Комплект деталей" data-project-description="Комплект деталей используется для крепления и соединения элементов сборочного узла. Литниковая система позволяет одновременно получать несколько компонентов.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-43/photo-01.jpg" target="_blank" rel="noopener" aria-label="Комплект деталей, фото 1"><img src="../assets/examples-photos/slide-43/photo-01.jpg" alt="Комплект деталей: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-43/photo-02.jpg" target="_blank" rel="noopener" aria-label="Комплект деталей, фото 2"><img src="../assets/examples-photos/slide-43/photo-02.jpg" alt="Комплект деталей: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-43/photo-03.jpg" target="_blank" rel="noopener" aria-label="Комплект деталей, фото 3"><img src="../assets/examples-photos/slide-43/photo-03.jpg" alt="Комплект деталей: фото 3" loading="lazy" decoding="async"></a>
+              <span>26</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 26</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Комплект деталей</h3>
+              <p>Отливки с литниками и рабочие части формы.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Пластиковая воронка" data-project-title="Пластиковая воронка" data-project-description="Пластиковая воронка направляет поток жидкости или сыпучего материала в узкое отверстие. Форма уменьшает потери и упрощает аккуратное наполнение.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-44/photo-01.jpg" target="_blank" rel="noopener" aria-label="Пластиковая воронка, фото 1"><img src="../assets/examples-photos/slide-44/photo-01.jpg" alt="Пластиковая воронка: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-44/photo-02.jpg" target="_blank" rel="noopener" aria-label="Пластиковая воронка, фото 2"><img src="../assets/examples-photos/slide-44/photo-02.jpg" alt="Пластиковая воронка: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-44/photo-03.jpg" target="_blank" rel="noopener" aria-label="Пластиковая воронка, фото 3"><img src="../assets/examples-photos/slide-44/photo-03.jpg" alt="Пластиковая воронка: фото 3" loading="lazy" decoding="async"></a>
+              <span>27</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 27</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Пластиковая воронка</h3>
+              <p>Готовое изделие и пресс-форма.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Кольцевые детали" data-project-title="Кольцевые детали" data-project-description="Кольцевые детали применяются для центрирования, фиксации или уплотнения сопряжённых элементов. Стабильная геометрия обеспечивает равномерную посадку по окружности.">
+            <div class="project-card-media project-card-gallery photo-count-2">
+              <a href="../assets/examples-photos/slide-45/photo-01.jpg" target="_blank" rel="noopener" aria-label="Кольцевые детали, фото 1"><img src="../assets/examples-photos/slide-45/photo-01.jpg" alt="Кольцевые детали: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-45/photo-02.jpg" target="_blank" rel="noopener" aria-label="Кольцевые детали, фото 2"><img src="../assets/examples-photos/slide-45/photo-02.jpg" alt="Кольцевые детали: фото 2" loading="lazy" decoding="async"></a>
+              <span>28</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 28</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Кольцевые детали</h3>
+              <p>Пробные отливки и рабочая зона формы.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Решётчатый держатель" data-project-title="Решётчатый держатель" data-project-description="Решётчатый держатель фиксирует предмет или внутренний компонент, сохраняя доступ воздуха и обзор. Ячеистая структура снижает массу изделия.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-46/photo-01.jpg" target="_blank" rel="noopener" aria-label="Решётчатый держатель, фото 1"><img src="../assets/examples-photos/slide-46/photo-01.jpg" alt="Решётчатый держатель: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-46/photo-02.jpg" target="_blank" rel="noopener" aria-label="Решётчатый держатель, фото 2"><img src="../assets/examples-photos/slide-46/photo-02.jpg" alt="Решётчатый держатель: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-46/photo-03.jpg" target="_blank" rel="noopener" aria-label="Решётчатый держатель, фото 3"><img src="../assets/examples-photos/slide-46/photo-03.jpg" alt="Решётчатый держатель: фото 3" loading="lazy" decoding="async"></a>
+              <span>29</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 29</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Решётчатый держатель</h3>
+              <p>Изделие и две половины пресс-формы.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Резьбовая крышка" data-project-title="Резьбовая крышка" data-project-description="Резьбовая крышка закрывает горловину или корпус и создаёт разъёмное соединение. Резьба обеспечивает плотную и повторяемую фиксацию.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-47/photo-01.jpg" target="_blank" rel="noopener" aria-label="Резьбовая крышка, фото 1"><img src="../assets/examples-photos/slide-47/photo-01.jpg" alt="Резьбовая крышка: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-47/photo-02.jpg" target="_blank" rel="noopener" aria-label="Резьбовая крышка, фото 2"><img src="../assets/examples-photos/slide-47/photo-02.jpg" alt="Резьбовая крышка: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-47/photo-03.jpg" target="_blank" rel="noopener" aria-label="Резьбовая крышка, фото 3"><img src="../assets/examples-photos/slide-47/photo-03.jpg" alt="Резьбовая крышка: фото 3" loading="lazy" decoding="async"></a>
+              <span>30</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 30</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Резьбовая крышка</h3>
+              <p>Готовая деталь и испытание формы.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Пластиковый лоток" data-project-title="Пластиковый лоток" data-project-description="Пластиковый лоток предназначен для размещения, сортировки и перемещения изделий. Борта удерживают содержимое, а плоское основание упрощает складирование.">
+            <div class="project-card-media project-card-gallery photo-count-5">
+              <a href="../assets/examples-photos/slide-48/photo-01.jpg" target="_blank" rel="noopener" aria-label="Пластиковый лоток, фото 1"><img src="../assets/examples-photos/slide-48/photo-01.jpg" alt="Пластиковый лоток: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-48/photo-02.jpg" target="_blank" rel="noopener" aria-label="Пластиковый лоток, фото 2"><img src="../assets/examples-photos/slide-48/photo-02.jpg" alt="Пластиковый лоток: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-48/photo-03.jpg" target="_blank" rel="noopener" aria-label="Пластиковый лоток, фото 3"><img src="../assets/examples-photos/slide-48/photo-03.jpg" alt="Пластиковый лоток: фото 3" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-48/photo-04.jpg" target="_blank" rel="noopener" aria-label="Пластиковый лоток, фото 4"><img src="../assets/examples-photos/slide-48/photo-04.jpg" alt="Пластиковый лоток: фото 4" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-48/photo-05.jpg" target="_blank" rel="noopener" aria-label="Пластиковый лоток, фото 5"><img src="../assets/examples-photos/slide-48/photo-05.jpg" alt="Пластиковый лоток: фото 5" loading="lazy" decoding="async"></a>
+              <span>31</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 31</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Пластиковый лоток</h3>
+              <p>Образцы и этапы пробного цикла.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Круглая решётка" data-project-title="Круглая решётка" data-project-description="Круглая решётка защищает внутренний узел и пропускает воздушный поток. Радиальная структура поддерживает форму и препятствует попаданию крупных предметов.">
+            <div class="project-card-media project-card-gallery photo-count-3">
+              <a href="../assets/examples-photos/slide-49/photo-01.jpg" target="_blank" rel="noopener" aria-label="Круглая решётка, фото 1"><img src="../assets/examples-photos/slide-49/photo-01.jpg" alt="Круглая решётка: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-49/photo-02.jpg" target="_blank" rel="noopener" aria-label="Круглая решётка, фото 2"><img src="../assets/examples-photos/slide-49/photo-02.jpg" alt="Круглая решётка: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-49/photo-03.jpg" target="_blank" rel="noopener" aria-label="Круглая решётка, фото 3"><img src="../assets/examples-photos/slide-49/photo-03.jpg" alt="Круглая решётка: фото 3" loading="lazy" decoding="async"></a>
+              <span>32</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 32</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Круглая решётка</h3>
+              <p>Отливка и рабочие части оснастки.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Органайзер" data-project-title="Органайзер" data-project-description="Органайзер разделяет предметы по отдельным секциям и упрощает хранение. Формованные ячейки удерживают содержимое на своих местах.">
+            <div class="project-card-media project-card-gallery photo-count-4">
+              <a href="../assets/examples-photos/slide-50/photo-01.jpg" target="_blank" rel="noopener" aria-label="Органайзер, фото 1"><img src="../assets/examples-photos/slide-50/photo-01.jpg" alt="Органайзер: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-50/photo-02.jpg" target="_blank" rel="noopener" aria-label="Органайзер, фото 2"><img src="../assets/examples-photos/slide-50/photo-02.jpg" alt="Органайзер: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-50/photo-03.jpg" target="_blank" rel="noopener" aria-label="Органайзер, фото 3"><img src="../assets/examples-photos/slide-50/photo-03.jpg" alt="Органайзер: фото 3" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-50/photo-04.jpg" target="_blank" rel="noopener" aria-label="Органайзер, фото 4"><img src="../assets/examples-photos/slide-50/photo-04.jpg" alt="Органайзер: фото 4" loading="lazy" decoding="async"></a>
+              <span>33</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 33</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Органайзер</h3>
+              <p>Две детали изделия и пресс-форма.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Защитная крышка" data-project-title="Защитная крышка" data-project-description="Защитная крышка закрывает рабочую зону механизма или корпуса. Она предотвращает случайный контакт и защищает внутренние элементы от загрязнений.">
+            <div class="project-card-media project-card-gallery photo-count-4">
+              <a href="../assets/examples-photos/slide-51/photo-01.jpg" target="_blank" rel="noopener" aria-label="Защитная крышка, фото 1"><img src="../assets/examples-photos/slide-51/photo-01.jpg" alt="Защитная крышка: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-51/photo-02.jpg" target="_blank" rel="noopener" aria-label="Защитная крышка, фото 2"><img src="../assets/examples-photos/slide-51/photo-02.jpg" alt="Защитная крышка: фото 2" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-51/photo-03.jpg" target="_blank" rel="noopener" aria-label="Защитная крышка, фото 3"><img src="../assets/examples-photos/slide-51/photo-03.jpg" alt="Защитная крышка: фото 3" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-51/photo-04.jpg" target="_blank" rel="noopener" aria-label="Защитная крышка, фото 4"><img src="../assets/examples-photos/slide-51/photo-04.jpg" alt="Защитная крышка: фото 4" loading="lazy" decoding="async"></a>
+              <span>34</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 34</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Защитная крышка</h3>
+              <p>Рабочая полость и образцы изделия.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Технические детали" data-project-title="Технические детали" data-project-description="Технические детали используются для фиксации и взаимодействия элементов механизма. Точная форма обеспечивает правильное положение компонентов при сборке.">
+            <div class="project-card-media project-card-gallery photo-count-2">
+              <a href="../assets/examples-photos/slide-52/photo-01.jpg" target="_blank" rel="noopener" aria-label="Технические детали, фото 1"><img src="../assets/examples-photos/slide-52/photo-01.jpg" alt="Технические детали: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-52/photo-02.jpg" target="_blank" rel="noopener" aria-label="Технические детали, фото 2"><img src="../assets/examples-photos/slide-52/photo-02.jpg" alt="Технические детали: фото 2" loading="lazy" decoding="async"></a>
+              <span>35</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 35</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Технические детали</h3>
+              <p>Пробные отливки и пресс-форма.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0" role="button" aria-label="Открыть описание: Соединительные элементы" data-project-title="Соединительные элементы" data-project-description="Соединительные элементы объединяют детали конструкции и удерживают их в заданном положении. Геометрия обеспечивает быструю установку и стабильное соединение.">
+            <div class="project-card-media project-card-gallery photo-count-2">
+              <a href="../assets/examples-photos/slide-53/photo-01.jpg" target="_blank" rel="noopener" aria-label="Соединительные элементы, фото 1"><img src="../assets/examples-photos/slide-53/photo-01.jpg" alt="Соединительные элементы: фото 1" loading="lazy" decoding="async"></a>
+              <a href="../assets/examples-photos/slide-53/photo-02.jpg" target="_blank" rel="noopener" aria-label="Соединительные элементы, фото 2"><img src="../assets/examples-photos/slide-53/photo-02.jpg" alt="Соединительные элементы: фото 2" loading="lazy" decoding="async"></a>
+              <span>36</span>
+            </div>
+            <div class="project-card-copy">
+              <div class="project-card-meta"><span>ПРОЕКТ / 36</span><span>ИЗДЕЛИЯ И ОСНАСТКА</span></div>
+              <h3>Соединительные элементы</h3>
+              <p>Готовые детали и испытание оснастки.</p>
+              <span class="project-card-open">ОТКРЫТЬ ОПИСАНИЕ <b>↗</b></span>
+            </div>
+          </article>
+        </div>
+        <div class="project-carousel-progress" aria-hidden="true"><span data-project-progress></span></div>
+
+        <div class="project-modal" data-project-modal aria-hidden="true">
+          <button class="project-modal-backdrop" type="button" data-project-close aria-label="Закрыть описание проекта"></button>
+          <section class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+            <button class="project-modal-close" type="button" data-project-close aria-label="Закрыть">×</button>
+            <div class="project-modal-gallery" data-project-modal-gallery></div>
+            <div class="project-modal-copy">
+              <span data-project-modal-meta>ПРОЕКТ М88</span>
+              <h3 id="project-modal-title" data-project-modal-title></h3>
+              <p data-project-modal-description></p>
+            </div>
+          </section>
         </div>
 
         <div class="project-cta reveal"><p><span>ЕСТЬ ЧЕРТЁЖ ИЛИ ОБРАЗЕЦ?</span> Покажите изделие — предложим путь от DFM до серийного литья.</p><a class="btn btn-primary" href="#contact">ОТПРАВИТЬ ТЗ <span>→</span></a></div>
@@ -249,6 +790,89 @@
       }else{
         for(var k=0;k<nodes.length;k++){nodes[k].classList.add('visible');}
       }
+
+      var projectCarousel=document.querySelector('[data-project-carousel]');
+      var projectPrev=document.querySelector('[data-project-prev]');
+      var projectNext=document.querySelector('[data-project-next]');
+      var projectProgress=document.querySelector('[data-project-progress]');
+      if(projectCarousel&&projectPrev&&projectNext){
+        var projectStep=function(){
+          var card=projectCarousel.querySelector('.project-card');
+          if(!card){return projectCarousel.clientWidth*.8;}
+          var styles=window.getComputedStyle(projectCarousel);
+          var gap=parseFloat(styles.columnGap||styles.gap)||18;
+          return (card.getBoundingClientRect().width+gap)*2;
+        };
+        var updateProjectProgress=function(){
+          var max=projectCarousel.scrollWidth-projectCarousel.clientWidth;
+          var ratio=max>0?projectCarousel.scrollLeft/max:0;
+          if(projectProgress){projectProgress.style.transform='scaleX('+Math.max(.08,ratio)+')';}
+          projectPrev.disabled=projectCarousel.scrollLeft<2;
+          projectNext.disabled=projectCarousel.scrollLeft>=max-2;
+        };
+        projectPrev.addEventListener('click',function(){projectCarousel.scrollBy({left:-projectStep(),behavior:'smooth'});});
+        projectNext.addEventListener('click',function(){projectCarousel.scrollBy({left:projectStep(),behavior:'smooth'});});
+        projectCarousel.addEventListener('scroll',updateProjectProgress,{passive:true});
+        window.addEventListener('resize',updateProjectProgress);
+        updateProjectProgress();
+      }
+
+      var projectModal=document.querySelector('[data-project-modal]');
+      var modalGallery=document.querySelector('[data-project-modal-gallery]');
+      var modalTitle=document.querySelector('[data-project-modal-title]');
+      var modalDescription=document.querySelector('[data-project-modal-description]');
+      var modalMeta=document.querySelector('[data-project-modal-meta]');
+      var modalCloseButtons=document.querySelectorAll('[data-project-close]');
+      var projectCards=document.querySelectorAll('.project-card[data-project-description]');
+      var lastProjectCard=null;
+      var openProjectModal=function(card){
+        if(!projectModal||!modalGallery||!modalTitle||!modalDescription){return;}
+        var sourceGallery=card.querySelector('.project-card-gallery');
+        var countClass='';
+        if(sourceGallery){
+          for(var c=0;c<sourceGallery.classList.length;c++){
+            if(sourceGallery.classList[c].indexOf('photo-count-')===0){countClass=sourceGallery.classList[c];}
+          }
+        }
+        modalGallery.className='project-modal-gallery '+countClass;
+        while(modalGallery.firstChild){modalGallery.removeChild(modalGallery.firstChild);}
+        if(sourceGallery){
+          var photoLinks=sourceGallery.querySelectorAll('a');
+          for(var p=0;p<photoLinks.length;p++){modalGallery.appendChild(photoLinks[p].cloneNode(true));}
+        }
+        modalTitle.textContent=card.getAttribute('data-project-title')||'';
+        modalDescription.textContent=card.getAttribute('data-project-description')||'';
+        var meta=card.querySelector('.project-card-meta');
+        if(modalMeta&&meta){
+          var metaParts=meta.querySelectorAll('span');
+          modalMeta.textContent=metaParts.length>1
+            ? metaParts[0].textContent.trim()+' / '+metaParts[1].textContent.trim()
+            : meta.textContent.replace(/\s+/g,' ').trim();
+        }
+        lastProjectCard=card;
+        projectModal.classList.add('open');
+        projectModal.setAttribute('aria-hidden','false');
+        document.body.classList.add('modal-open');
+        var closeButton=projectModal.querySelector('.project-modal-close');
+        if(closeButton){closeButton.focus();}
+      };
+      var closeProjectModal=function(){
+        if(!projectModal||!projectModal.classList.contains('open')){return;}
+        projectModal.classList.remove('open');
+        projectModal.setAttribute('aria-hidden','true');
+        document.body.classList.remove('modal-open');
+        if(lastProjectCard){lastProjectCard.focus();}
+      };
+      for(var pc=0;pc<projectCards.length;pc++){
+        var cardLinks=projectCards[pc].querySelectorAll('.project-card-gallery a');
+        for(var cl=0;cl<cardLinks.length;cl++){cardLinks[cl].setAttribute('tabindex','-1');}
+        projectCards[pc].addEventListener('click',function(event){event.preventDefault();openProjectModal(this);});
+        projectCards[pc].addEventListener('keydown',function(event){
+          if(event.key==='Enter'||event.key===' '){event.preventDefault();openProjectModal(this);}
+        });
+      }
+      for(var mb=0;mb<modalCloseButtons.length;mb++){modalCloseButtons[mb].addEventListener('click',closeProjectModal);}
+      document.addEventListener('keydown',function(event){if(event.key==='Escape'){closeProjectModal();}});
     })();
   </script>
   <script src="../assets/form.js" defer></script>
