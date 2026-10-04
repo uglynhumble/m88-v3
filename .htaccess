@@ -25,7 +25,7 @@ DirectoryIndex index.html index.php
 ErrorDocument 404 /404.html
 
 # ─── Закрываем служебное ─────────────────────────────────────────────────────
-<FilesMatch "^(config\.php|README\.md|nginx\.conf\.example|\.htaccess)$">
+<FilesMatch "^(config\.php|config\.local\.php|README\.md|nginx\.conf\.example|\.htaccess)$">
   <IfModule mod_authz_core.c>
     Require all denied
   </IfModule>

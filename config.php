@@ -4,7 +4,7 @@
  * Единственный файл, который нужно править при запуске сайта.
  */
 
-return [
+$config = [
 
     // ─── Куда приходят заявки ────────────────────────────────────────────────
     // Можно указать несколько адресов через запятую.
@@ -56,6 +56,17 @@ return [
     'smtp_port'     => 465,
     'smtp_secure'   => 'ssl',       // 'ssl' для порта 465, 'tls' для 587
     'smtp_user'     => 'zakaz@m88.su',
-    // Секрет хранится в переменной окружения SMTP_PASS, а не в публичном файле.
+    // Секрет берётся из переменной окружения SMTP_PASS или config.local.php.
     'smtp_pass'     => (string) getenv('SMTP_PASS'),
 ];
+
+// Локальные серверные настройки не хранятся в Git и не перезаписываются CI/CD.
+$localConfigFile = __DIR__ . '/config.local.php';
+if (is_file($localConfigFile)) {
+    $localConfig = require $localConfigFile;
+    if (is_array($localConfig)) {
+        $config = array_replace($config, $localConfig);
+    }
+}
+
+return $config;

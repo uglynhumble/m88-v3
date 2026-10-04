@@ -1,0 +1,67 @@
+name: Deploy to REG.RU
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-reg-ru-production
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: ${{ vars.REG_DEPLOY_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate required secrets
+        env:
+          REG_SFTP_HOST: ${{ secrets.REG_SFTP_HOST }}
+          REG_SFTP_USER: ${{ secrets.REG_SFTP_USER }}
+          REG_SFTP_PASSWORD: ${{ secrets.REG_SFTP_PASSWORD }}
+          REG_DEPLOY_PATH: ${{ secrets.REG_DEPLOY_PATH }}
+        run: |
+          set -euo pipefail
+          test -n "$REG_SFTP_HOST"
+          test -n "$REG_SFTP_USER"
+          test -n "$REG_SFTP_PASSWORD"
+          test -n "$REG_DEPLOY_PATH"
+          test "$REG_DEPLOY_PATH" != "/"
+          test ${#REG_DEPLOY_PATH} -gt 5
+
+      - name: Install SFTP client
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy site over SFTP
+        env:
+          REG_SFTP_HOST: ${{ secrets.REG_SFTP_HOST }}
+          REG_SFTP_USER: ${{ secrets.REG_SFTP_USER }}
+          REG_SFTP_PASSWORD: ${{ secrets.REG_SFTP_PASSWORD }}
+          REG_DEPLOY_PATH: ${{ secrets.REG_DEPLOY_PATH }}
+        run: |
+          set -euo pipefail
+          lftp -u "$REG_SFTP_USER","$REG_SFTP_PASSWORD" "sftp://$REG_SFTP_HOST:22" -e "
+            set sftp:auto-confirm yes;
+            set net:max-retries 2;
+            set net:timeout 20;
+            mirror --reverse --delete --parallel=4 --verbose \
+              --exclude-glob .git/ \
+              --exclude-glob .github/ \
+              --exclude-glob .vercel/ \
+              --exclude-glob config.local.php \
+              --exclude-glob storage/*.csv \
+              --exclude-glob storage/rate_*.json \
+              --exclude-glob storage/files/** \
+              --exclude-glob .well-known/** \
+              ./ \"$REG_DEPLOY_PATH\";
+            bye
+          "
