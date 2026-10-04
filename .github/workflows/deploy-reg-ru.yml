@@ -49,10 +49,29 @@ jobs:
           REG_DEPLOY_PATH: ${{ secrets.REG_DEPLOY_PATH }}
         run: |
           set -euo pipefail
+
+          # REG.RU opens SFTP inside /var/www/<user>/data. Accept the full
+          # server path from the secret, but convert it to an SFTP-relative
+          # path so the directory tree is not created a second time.
+          deploy_path="${REG_DEPLOY_PATH//\"/}"
+          deploy_path="${deploy_path//$'\r'/}"
+          deploy_path="${deploy_path%/}"
+          deploy_path="${deploy_path#/var/www/$REG_SFTP_USER/data/}"
+          deploy_path="${deploy_path#/}"
+
+          case "$deploy_path" in
+            www/*) ;;
+            *)
+              echo "::error::REG_DEPLOY_PATH must point inside the REG.RU www directory"
+              exit 1
+              ;;
+          esac
+
           lftp -u "$REG_SFTP_USER","$REG_SFTP_PASSWORD" "sftp://$REG_SFTP_HOST:22" -e "
             set sftp:auto-confirm yes;
             set net:max-retries 2;
             set net:timeout 20;
+            cd $deploy_path;
             mirror --reverse --delete --parallel=4 --verbose \
               --exclude-glob .git/ \
               --exclude-glob .github/ \
@@ -62,6 +81,6 @@ jobs:
               --exclude-glob storage/rate_*.json \
               --exclude-glob storage/files/** \
               --exclude-glob .well-known/** \
-              ./ \"$REG_DEPLOY_PATH\";
+              ./ .;
             bye
           "
