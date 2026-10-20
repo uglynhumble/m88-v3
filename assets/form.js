@@ -359,7 +359,12 @@
           if (window.dataLayer && window.dataLayer.push) {
             window.dataLayer.push({ event: 'form_success', form_page: pageName });
           }
-          if (window.ym && window.M88_YM_ID) window.ym(window.M88_YM_ID, 'reachGoal', 'form_success');
+          if (window.ym) {
+            var metrikaIds = window.M88_YM_IDS || (window.M88_YM_ID ? [window.M88_YM_ID] : []);
+            metrikaIds.forEach(function (id) {
+              window.ym(id, 'reachGoal', 'form_success');
+            });
+          }
           showSuccess(json.ticket, json.skipped);
           return;
         }
