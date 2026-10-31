@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f8f3">
+  <meta name="description" content="Зарядные станции и переходники для электромобилей от М88 Energy.">
+  <title>M88 Energy — зарядное оборудование</title>
+  <link rel="stylesheet" href="../assets/form.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="../assets/form.js" defer></script>
+</head>
+<body>
+  <div class="energy-page">
+    <header class="energy-header" aria-label="Навигация">
+      <a class="energy-mark" href="../" aria-label="М88 — на главную">
+        <img src="../assets/m88-logo.png" alt="М88">
+        <span><b>М88</b> VM&nbsp;PARTNERS</span>
+      </a>
+
+      <nav class="energy-nav" id="energy-navigation" aria-label="Разделы страницы">
+        <a href="#products">Продукция</a>
+        <a href="#cart">Корзина <span class="cart-badge" id="cart-count">0</span></a>
+        <a class="nav-request" href="#request">Отправить заявку</a>
+      </nav>
+
+      <button class="menu-shape" type="button" aria-label="Открыть меню" aria-controls="energy-navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+      <section class="catalog-hero" aria-labelledby="catalog-title">
+        <div class="hero-copy">
+          <p class="eyebrow">M88 Energy</p>
+          <h1 id="catalog-title">Оборудование для зарядной инфраструктуры</h1>
+          <p>Выберите станцию по мощности и исполнению или добавьте подходящий переходник. Технические параметры каждой позиции собраны прямо в карточке.</p>
+          <a class="hero-button" href="#products">Смотреть оборудование <span>↓</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="energy-orbit orbit-one"></div>
+          <div class="energy-orbit orbit-two"></div>
+          <div class="charge-core"><i></i></div>
+          <div class="charge-line line-one"></div>
+          <div class="charge-line line-two"></div>
+          <div class="energy-leaf leaf-one"></div>
+          <div class="energy-leaf leaf-two"></div>
+        </div>
+      </section>
+
+      <section class="energy-about" aria-labelledby="energy-about-title">
+        <div class="about-slogan">
+          <p class="eyebrow">М88 · энергия движения · надёжность</p>
+          <h2 id="energy-about-title">Надёжные зарядные станции <em>под ваши задачи</em></h2>
+        </div>
+        <div class="certification-card">
+          <div class="certification-mark" aria-hidden="true"><span>ЕАЭС</span><i>✓</i></div>
+          <div>
+            <p class="certification-label">Проверенное оборудование</p>
+            <h3>Соответствие стандартам ЕАЭС</h3>
+            <p>Мы работаем только с сертифицированным зарядным оборудованием, соответствующим требованиям технических регламентов ЕАЭС. Проверяем комплект документов, маркировку и заявленные характеристики каждой позиции.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="products" aria-labelledby="products-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Каталог</p>
+            <h2 id="products-title">Выберите оборудование</h2>
+          </div>
+          <p class="price-note">Цены станций перенесены из исходного прайс-листа и включают НДС и доставку. Валюта в документе не указана.</p>
+        </div>
+
+        <div class="catalog-tools">
+          <div class="category-switch" aria-label="Категория оборудования">
+            <button class="is-active" type="button" data-filter="station">Зарядные станции <span>20</span></button>
+            <button type="button" data-filter="adapter">Переходники <span>29</span></button>
+            <button type="button" data-filter="all">Показать всё <span>49</span></button>
+          </div>
+          <label class="catalog-search">
+            <span class="sr-only">Поиск по каталогу</span>
+            <input id="catalog-search" type="search" placeholder="Мощность, модель или разъём" autocomplete="off">
+          </label>
+        </div>
+
+        <p class="catalog-result" id="catalog-result" aria-live="polite"></p>
+        <div class="product-grid" id="product-grid"></div>
+      </section>
+
+      <section class="cart-section" id="cart" aria-labelledby="cart-title">
+        <div class="cart-heading">
+          <div>
+            <p class="eyebrow">Ваш выбор</p>
+            <h2 id="cart-title">Корзина оборудования</h2>
+          </div>
+          <button class="clear-cart" id="clear-cart" type="button">Очистить</button>
+        </div>
+        <div class="cart-empty" id="cart-empty">
+          <span>0</span>
+          <p>Добавьте станции или переходники из каталога.</p>
+          <a href="#products">Перейти к оборудованию</a>
+        </div>
+        <div class="cart-content" id="cart-content" hidden>
+          <div class="cart-list" id="cart-list"></div>
+          <aside class="cart-total">
+            <span>Позиций</span>
+            <strong id="cart-items-count">0</strong>
+            <span>Сумма станций</span>
+            <strong id="cart-total-value">0</strong>
+            <small>Без учёта переходников. Валюта в исходном прайс-листе не указана.</small>
+            <a href="#request">Перейти к заявке</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="request-section" id="request" aria-labelledby="request-title">
+        <div class="request-copy">
+          <p class="eyebrow">Подбор и заказ</p>
+          <h2 id="request-title">Отправьте состав заявки</h2>
+          <p>Выбранное оборудование автоматически попадёт в заявку. Оставьте контакт — менеджер уточнит конфигурацию, валюту расчёта и сроки поставки.</p>
+          <a href="tel:+74993256982">+7 (499) 325-69-82</a>
+          <a href="mailto:zakaz@m88.su">zakaz@m88.su</a>
+        </div>
+        <form class="request-form" id="request-form" data-m88form data-endpoint="/send.php" data-page="M88 Energy — зарядное оборудование">
+          <label>Имя<input name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required></label>
+          <label>Телефон<input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-phone required></label>
+          <label class="field-wide">Комментарий<textarea name="comment" rows="4" placeholder="Например: объект, количество точек, требуемые разъёмы"></textarea></label>
+          <input id="request-message" name="message" type="hidden">
+          <button class="field-wide" type="submit">Отправить заявку</button>
+          <p class="form-note m88-note field-wide" data-note>Заявка уйдёт прямо менеджеру М88. Выбранные товары будут добавлены автоматически.</p>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      var stationRows = [
+        ["20 кВт, напольная", 6100, "1 пистолет", "Инфипауэр 1K070", "Хуэйюнь, 80 А, 5 м"],
+        ["20 кВт, настенная", 5800, "1 пистолет", "Инфипауэр 1K070", "Хуэйюнь, 80 А, 5 м"],
+        ["30 кВт, напольная", 6600, "1 пистолет", "Линкан 30 кВт", "Хуэйюнь, 80 А, 5 м"],
+        ["30 кВт, настенная", 6400, "1 пистолет", "Линкан 30 кВт", "Хуэйюнь, 80 А, 5 м"],
+        ["40 кВт, напольная", 8300, "1 пистолет", "Линкан 40 кВт", "Хуэйюнь, 125 А, 5 м"],
+        ["40 кВт, настенная", 7700, "1 пистолет", "Линкан 40 кВт", "Хуэйюнь, 125 А, 5 м"],
+        ["40 кВт, настенная", 11000, "2 пистолета", "Инфипауэр 1K070, 2 шт.", "Хуэйюнь, 125 А, 5 м"],
+        ["40 кВт, напольная", 12100, "2 пистолета", "Инфипауэр 1K070, 2 шт.", "Хуэйюнь, 125 А, 5 м"],
+        ["60 кВт, напольная", 14200, "2 пистолета", "Линкан", "Хуэйюнь, 125 А, 5 м"],
+        ["60 кВт, напольная", 11600, "1 пистолет", "Линкан", "Хуэйюнь, 125 А, 5 м"],
+        ["80 кВт", 13700, "1 пистолет", "Линкан 40 кВт", "Хуэйюнь, 200 А"],
+        ["80 кВт", 16300, "2 пистолета", "Линкан 40 кВт", "Хуэйюнь, 200 А"],
+        ["120 кВт", 19800, "2 пистолета", "Линкан 30 кВт / Инфипауэр 60 кВт", "Воэр"],
+        ["160 кВт", 23100, "2 пистолета", "Линкан 40 кВт", "Воэр, 250 А"],
+        ["240 кВт", 33600, "2 пистолета", "Юю 50 кВт, 5 шт.", "Хуэйюнь, 300 А, 7 м"],
+        ["320 кВт", 38400, "2 пистолета", "Юю 50 кВт, 7 шт.", "Хуэйюнь, 300 А, 7 м"],
+        ["360 кВт", 41000, "2 пистолета", "Юю 50 кВт, 8 шт.", "Хуэйюнь, 300 А, 7 м"],
+        ["400 кВт", 43100, "2 пистолета", "Юю 50 кВт, 8 шт.", "Хуэйюнь, 300 А, 7 м"],
+        ["500 кВт", 51000, "2 пистолета", "Юю 50 кВт, 10 шт.", "Хуэйюнь, 300 А, 7 м"],
+        ["600 кВт", 57800, "2 пистолета", "Юю 50 кВт", "Хуэйюнь, 400 А, 7 м"]
+      ];
+
+      var products = stationRows.map(function (row, index) {
+        var titleParts = row[0].split(", ");
+        return {
+          id: "station-" + (index + 1), kind: "station", family: "DC станция",
+          title: "Зарядная станция " + row[0], price: row[1],
+          image: "assets/station-" + String(index + 1).padStart(2, "0") + ".webp",
+          specs: [["Мощность", titleParts[0]], ["Исполнение", titleParts[1] || "По каталогу"], ["Коннекторы", row[2]], ["Силовой модуль", row[3]], ["Кабель", row[4]]]
+        };
+      });
+
+      var acAdapters = [
+        ["ZH1", "США → Европа", "T1-T2"], ["ZH2", "Европа → США", "T2-T1"],
+        ["ZH3", "Китай → Европа", "GB-T2"], ["ZH4", "Европа → Китай", "T2-GB"],
+        ["ZH5", "США → Китай", "T1-GB"], ["ZH6", "NACS → США", "NACS-T1"],
+        ["ZH7", "США → NACS", "T1-NACS"], ["ZH8", "Европа → NACS", "T2-NACS"],
+        ["ZH9", "NACS → Европа", "NACS-T2"], ["ZH10", "NACS → Китай", "NACS-GB"],
+        ["ZH11", "Китай → США", "GB-T1"], ["ZH12", "Китай → NACS", "GB-NACS"]
+      ];
+
+      acAdapters.forEach(function (row) {
+        products.push({
+          id: "adapter-" + row[0].toLowerCase(), kind: "adapter", family: "AC переходник",
+          title: row[1] + " (" + row[2] + ")", image: "assets/adapter-" + row[0].toLowerCase() + ".webp?v=2",
+          specs: [["Модель", row[0]], ["Рабочее напряжение", "AC 110–250 В"], ["Рабочий ток", "до 32 А"], ["Защита", "IP55 / IP67 опционально"], ["Контакты", "Посеребрённая медь"], ["Ресурс", ">10 000 соединений"]]
+        });
+      });
+
+      var dcAdapters = [
+        ["DC-GZ01", "GBT → CCS2", "dc-gz01"], ["DC-GZM1", "GBT → CCS1", "dc-gzm1"],
+        ["DC-GZT1", "GBT → NACS", "dc-gzt1"], ["DC-OZG1", "CCS2 → GBT", "dc-ozg1"],
+        ["AC/DC-OZM1", "CCS2 → CCS1", "acdc-ozm1"], ["AC/DC-OZT1", "CCS2 → NACS", "acdc-ozt1"],
+        ["DC-OZR1", "CCS2 → CHAdeMO", "dc-ozr1"], ["DC-MZG1", "CCS1 → GBT", "dc-mzg1"],
+        ["AC/DC-MZO1", "CCS1 → CCS2", "acdc-mzo1"], ["DC-MZR1", "CCS1 → CHAdeMO", "dc-mzr1"],
+        ["DC-TZG1", "NACS → GBT", "dc-tzg1"], ["AC/DC-TZO1", "NACS → CCS2", "acdc-tzo1"],
+        ["DC-TZM1", "NACS → CCS1", "dc-tzm1"], ["DC-TZR1", "NACS → CHAdeMO", "dc-tzr1"],
+        ["DC-RZ01", "CHAdeMO → CCS2", "dc-rz01"], ["DC-RZM1", "CHAdeMO → CCS1", "dc-rzm1"],
+        ["DC-RZT1", "CHAdeMO → NACS", "dc-rzt1"]
+      ];
+
+      dcAdapters.forEach(function (row) {
+        products.push({
+          id: "adapter-" + row[2], kind: "adapter", family: "DC переходник",
+          title: row[1], image: "assets/adapter-" + row[2] + ".webp?v=2",
+          specs: [["Модель", row[0]], ["Рабочее напряжение", "DC 1000 В"], ["Рабочий ток", "250 / 300 / 350 / 400 / 500 А"], ["Защита", "IP65 / IP67 опционально"], ["Контакты", "Посеребрённая медь"], ["Сертификация", "FCC, CE"]]
+        });
+      });
+
+      var productById = new Map(products.map(function (product) { return [product.id, product]; }));
+      var cart = new Map();
+      var activeFilter = "station";
+      var grid = document.getElementById("product-grid");
+      var search = document.getElementById("catalog-search");
+      var result = document.getElementById("catalog-result");
+      var toast = document.getElementById("toast");
+
+      function money(value) { return value.toLocaleString("ru-RU"); }
+
+      function card(product) {
+        var price = product.kind === "station" ? '<div class="product-price"><strong>' + money(product.price) + '</strong><span>по прайс-листу</span></div>' : "";
+        var specs = product.specs.map(function (spec) { return '<li><span>' + spec[0] + '</span><b>' + spec[1] + '</b></li>'; }).join("");
+        return '<article class="product-card product-' + product.kind + '">' +
+          '<div class="product-image"><img src="' + product.image + '" alt="' + product.title + '" loading="lazy"></div>' +
+          '<div class="product-body"><div class="product-meta"><span>' + product.family + '</span><small>' + (product.kind === "station" ? "В наличии под заказ" : "Цена не указана") + '</small></div>' +
+          '<h3>' + product.title + '</h3>' + price +
+          '<details><summary>Технические характеристики <i></i></summary><ul>' + specs + '</ul></details>' +
+          '<button class="buy-button" type="button" data-add="' + product.id + '">Купить <span>+</span></button></div></article>';
+      }
+
+      function renderProducts() {
+        var query = search.value.trim().toLowerCase();
+        var filtered = products.filter(function (product) {
+          var categoryMatch = activeFilter === "all" || product.kind === activeFilter;
+          var haystack = [product.title, product.family].concat(product.specs.flat()).join(" ").toLowerCase();
+          return categoryMatch && (!query || haystack.indexOf(query) !== -1);
+        });
+        grid.innerHTML = filtered.map(card).join("");
+        result.textContent = "Найдено позиций: " + filtered.length;
+      }
+
+      function showToast(text) {
+        toast.textContent = text;
+        toast.classList.add("is-visible");
+        window.clearTimeout(showToast.timer);
+        showToast.timer = window.setTimeout(function () { toast.classList.remove("is-visible"); }, 2200);
+      }
+
+      function renderCart() {
+        var count = Array.from(cart.values()).reduce(function (sum, qty) { return sum + qty; }, 0);
+        var empty = document.getElementById("cart-empty");
+        var content = document.getElementById("cart-content");
+        document.getElementById("cart-count").textContent = count;
+        document.getElementById("cart-items-count").textContent = count;
+        empty.hidden = count > 0;
+        content.hidden = count === 0;
+        var total = 0;
+        var rows = [];
+        cart.forEach(function (qty, id) {
+          var product = productById.get(id);
+          if (product.price) total += product.price * qty;
+          rows.push('<div class="cart-row"><img src="' + product.image + '" alt=""><div><span>' + product.family + '</span><strong>' + product.title + '</strong>' + (product.price ? '<small>' + money(product.price) + ' × ' + qty + '</small>' : '<small>Количество: ' + qty + '</small>') + '</div><div class="qty-controls"><button type="button" data-minus="' + id + '" aria-label="Уменьшить количество">−</button><b>' + qty + '</b><button type="button" data-plus="' + id + '" aria-label="Увеличить количество">+</button></div><button class="remove-item" type="button" data-remove="' + id + '" aria-label="Удалить позицию">×</button></div>');
+        });
+        document.getElementById("cart-list").innerHTML = rows.join("");
+        document.getElementById("cart-total-value").textContent = money(total) + " по прайс-листу";
+      }
+
+      document.querySelectorAll("[data-filter]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          activeFilter = button.dataset.filter;
+          document.querySelectorAll("[data-filter]").forEach(function (item) { item.classList.toggle("is-active", item === button); });
+          renderProducts();
+        });
+      });
+
+      search.addEventListener("input", renderProducts);
+
+      grid.addEventListener("click", function (event) {
+        var button = event.target.closest("[data-add]");
+        if (!button) return;
+        var id = button.dataset.add;
+        cart.set(id, (cart.get(id) || 0) + 1);
+        renderCart();
+        showToast("Добавлено: " + productById.get(id).title);
+      });
+
+      document.getElementById("cart-list").addEventListener("click", function (event) {
+        var plus = event.target.closest("[data-plus]");
+        var minus = event.target.closest("[data-minus]");
+        var remove = event.target.closest("[data-remove]");
+        if (plus) cart.set(plus.dataset.plus, (cart.get(plus.dataset.plus) || 0) + 1);
+        if (minus) {
+          var minusId = minus.dataset.minus;
+          var next = (cart.get(minusId) || 1) - 1;
+          if (next > 0) cart.set(minusId, next); else cart.delete(minusId);
+        }
+        if (remove) cart.delete(remove.dataset.remove);
+        renderCart();
+      });
+
+      document.getElementById("clear-cart").addEventListener("click", function () { cart.clear(); renderCart(); });
+
+      var requestForm = document.getElementById("request-form");
+
+      requestForm.addEventListener("submit", function () {
+        var lines = [];
+        cart.forEach(function (qty, id) {
+          var product = productById.get(id);
+          var price = product.price ? " — " + money(product.price) + " по прайс-листу за шт." : "";
+          lines.push("• " + product.title + " — " + qty + " шт." + price);
+        });
+        if (!lines.length) lines.push("Оборудование пока не выбрано — нужна консультация.");
+        var comment = requestForm.querySelector('[name="comment"]').value.trim();
+        document.getElementById("request-message").value = "Состав заявки:\n" + lines.join("\n") + "\n\nКомментарий:\n" + (comment || "—");
+      });
+
+      var requestSection = document.getElementById("request");
+      var successVisible = false;
+      var requestObserver = new MutationObserver(function () {
+        var done = requestSection.querySelector(".m88-done");
+        if (done && !successVisible) {
+          successVisible = true;
+          cart.clear();
+          renderCart();
+          showToast("Заявка отправлена. Корзина очищена.");
+        } else if (!done) {
+          successVisible = false;
+        }
+      });
+      requestObserver.observe(requestSection, { childList: true, subtree: true });
+
+      var header = document.querySelector(".energy-header");
+      var menuButton = document.querySelector(".menu-shape");
+      function closeMenu() { header.classList.remove("menu-open"); menuButton.setAttribute("aria-expanded", "false"); menuButton.setAttribute("aria-label", "Открыть меню"); }
+      menuButton.addEventListener("click", function () {
+        var open = header.classList.toggle("menu-open");
+        menuButton.setAttribute("aria-expanded", String(open));
+        menuButton.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
+      });
+      document.querySelectorAll(".energy-nav a").forEach(function (link) { link.addEventListener("click", closeMenu); });
+      document.addEventListener("keydown", function (event) { if (event.key === "Escape") closeMenu(); });
+
+      renderProducts();
+      renderCart();
+    }());
+  </script>
+</body>
+</html>
