@@ -69,7 +69,6 @@
             <p class="eyebrow">Каталог</p>
             <h2 id="products-title">Выберите оборудование</h2>
           </div>
-          <p class="price-note">Цены станций перенесены из исходного прайс-листа и включают НДС и доставку. Валюта в документе не указана.</p>
         </div>
 
         <div class="catalog-tools">
@@ -108,7 +107,7 @@
             <strong id="cart-items-count">0</strong>
             <span>Сумма станций</span>
             <strong id="cart-total-value">0</strong>
-            <small>Без учёта переходников. Валюта в исходном прайс-листе не указана.</small>
+            <small>Сумма указана в рублях с НДС, без учёта переходников. Их стоимость рассчитывается по запросу.</small>
             <a href="#request">Перейти к заявке</a>
           </aside>
         </div>
@@ -118,7 +117,7 @@
         <div class="request-copy">
           <p class="eyebrow">Подбор и заказ</p>
           <h2 id="request-title">Отправьте состав заявки</h2>
-          <p>Выбранное оборудование автоматически попадёт в заявку. Оставьте контакт — менеджер уточнит конфигурацию, валюту расчёта и сроки поставки.</p>
+          <p>Выбранное оборудование автоматически попадёт в заявку. Оставьте контакт — менеджер уточнит конфигурацию, комплектацию и сроки поставки.</p>
           <a href="tel:+74993256982">+7 (499) 325-69-82</a>
           <a href="mailto:zakaz@m88.su">zakaz@m88.su</a>
         </div>
@@ -132,6 +131,10 @@
         </form>
       </section>
     </main>
+
+    <footer class="energy-footer">
+      <p>© 2026 М88. Все права защищены. Информация на сайте не является публичной офертой.</p>
+    </footer>
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -165,7 +168,7 @@
         var titleParts = row[0].split(", ");
         return {
           id: "station-" + (index + 1), kind: "station", family: "DC станция",
-          title: "Зарядная станция " + row[0], price: row[1],
+          title: "Зарядная станция " + row[0], price: row[1] * 3 * 12.5,
           image: "assets/station-" + String(index + 1).padStart(2, "0") + ".webp",
           specs: [["Мощность", titleParts[0]], ["Исполнение", titleParts[1] || "По каталогу"], ["Коннекторы", row[2]], ["Силовой модуль", row[3]], ["Кабель", row[4]]]
         };
@@ -216,14 +219,16 @@
       var result = document.getElementById("catalog-result");
       var toast = document.getElementById("toast");
 
-      function money(value) { return value.toLocaleString("ru-RU"); }
+      function money(value) { return value.toLocaleString("ru-RU") + " ₽"; }
 
       function card(product) {
-        var price = product.kind === "station" ? '<div class="product-price"><strong>' + money(product.price) + '</strong><span>по прайс-листу</span></div>' : "";
+        var price = product.kind === "station"
+          ? '<div class="product-price"><strong>' + money(product.price) + '</strong><span>с НДС</span></div>'
+          : '<div class="product-price is-request"><strong>Цена по запросу</strong></div>';
         var specs = product.specs.map(function (spec) { return '<li><span>' + spec[0] + '</span><b>' + spec[1] + '</b></li>'; }).join("");
         return '<article class="product-card product-' + product.kind + '">' +
           '<div class="product-image"><img src="' + product.image + '" alt="' + product.title + '" loading="lazy"></div>' +
-          '<div class="product-body"><div class="product-meta"><span>' + product.family + '</span><small>' + (product.kind === "station" ? "В наличии под заказ" : "Цена не указана") + '</small></div>' +
+          '<div class="product-body"><div class="product-meta"><span>' + product.family + '</span><small>' + (product.kind === "station" ? "В наличии под заказ" : "Стоимость по запросу") + '</small></div>' +
           '<h3>' + product.title + '</h3>' + price +
           '<details><summary>Технические характеристики <i></i></summary><ul>' + specs + '</ul></details>' +
           '<button class="buy-button" type="button" data-add="' + product.id + '">Купить <span>+</span></button></div></article>';
@@ -260,10 +265,10 @@
         cart.forEach(function (qty, id) {
           var product = productById.get(id);
           if (product.price) total += product.price * qty;
-          rows.push('<div class="cart-row"><img src="' + product.image + '" alt=""><div><span>' + product.family + '</span><strong>' + product.title + '</strong>' + (product.price ? '<small>' + money(product.price) + ' × ' + qty + '</small>' : '<small>Количество: ' + qty + '</small>') + '</div><div class="qty-controls"><button type="button" data-minus="' + id + '" aria-label="Уменьшить количество">−</button><b>' + qty + '</b><button type="button" data-plus="' + id + '" aria-label="Увеличить количество">+</button></div><button class="remove-item" type="button" data-remove="' + id + '" aria-label="Удалить позицию">×</button></div>');
+          rows.push('<div class="cart-row"><img src="' + product.image + '" alt=""><div><span>' + product.family + '</span><strong>' + product.title + '</strong>' + (product.price ? '<small>' + money(product.price) + ' × ' + qty + '</small>' : '<small>Цена по запросу · ' + qty + ' шт.</small>') + '</div><div class="qty-controls"><button type="button" data-minus="' + id + '" aria-label="Уменьшить количество">−</button><b>' + qty + '</b><button type="button" data-plus="' + id + '" aria-label="Увеличить количество">+</button></div><button class="remove-item" type="button" data-remove="' + id + '" aria-label="Удалить позицию">×</button></div>');
         });
         document.getElementById("cart-list").innerHTML = rows.join("");
-        document.getElementById("cart-total-value").textContent = money(total) + " по прайс-листу";
+        document.getElementById("cart-total-value").textContent = money(total) + " с НДС";
       }
 
       document.querySelectorAll("[data-filter]").forEach(function (button) {
@@ -307,7 +312,7 @@
         var lines = [];
         cart.forEach(function (qty, id) {
           var product = productById.get(id);
-          var price = product.price ? " — " + money(product.price) + " по прайс-листу за шт." : "";
+          var price = product.price ? " — " + money(product.price) + " с НДС за шт." : " — цена по запросу";
           lines.push("• " + product.title + " — " + qty + " шт." + price);
         });
         if (!lines.length) lines.push("Оборудование пока не выбрано — нужна консультация.");

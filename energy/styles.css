@@ -635,6 +635,7 @@ img { max-width: 100%; }
 }
 
 .product-price span { color: var(--muted); font-size: 11px; }
+.product-price.is-request strong { color: var(--green-650); font-size: 21px; letter-spacing: -.025em; }
 
 .product-card details {
   margin-top: auto;
@@ -842,6 +843,17 @@ form[data-m88form].request-form textarea:focus { border-color: var(--green-300);
 .field-wide { grid-column: 1 / -1; }
 .request-form button { min-height: 52px; border: 0; border-radius: 13px; color: var(--green-950); background: var(--green-300); font-weight: 800; cursor: pointer; }
 .form-note { margin: -4px 0 0; color: #9db8a8; font-size: 10px; text-align: center; }
+
+.energy-footer {
+  margin-top: 24px;
+  padding: 24px 4px 34px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+.energy-footer p { margin: 0; }
 
 .toast {
   position: fixed;
