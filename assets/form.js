@@ -44,6 +44,59 @@
   }
 
   /* ------------------------------------------------------------------------
+   * UTM-метки. Яндекс Директ передаёт их в адресе посадочной страницы:
+   * utm_source=yandex&utm_medium=cpc&utm_campaign={campaign_id}&utm_term={keyword}
+   * Сохраняем значения до закрытия вкладки, чтобы они не потерялись после
+   * перехода по якорям или возврата к форме. Если Директ передал только yclid,
+   * источник и канал определяем как yandex / cpc.
+   * --------------------------------------------------------------------- */
+  var UTM_FIELDS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term'];
+
+  function queryValue(name) {
+    var query = String(window.location.search || '').replace(/^\?/, '').split('&');
+    for (var i = 0; i < query.length; i++) {
+      var pair = query[i].split('=');
+      var key = '';
+      try { key = decodeURIComponent((pair[0] || '').replace(/\+/g, ' ')); } catch (e) {}
+      if (key !== name) continue;
+      try { return decodeURIComponent((pair.slice(1).join('=') || '').replace(/\+/g, ' ')); }
+      catch (err) { return pair.slice(1).join('='); }
+    }
+    return '';
+  }
+
+  function sessionGet(key) {
+    try { return window.sessionStorage ? (window.sessionStorage.getItem(key) || '') : ''; }
+    catch (e) { return ''; }
+  }
+
+  function sessionSet(key, value) {
+    try { if (window.sessionStorage) window.sessionStorage.setItem(key, value); }
+    catch (e) { /* приватный режим может запрещать storage */ }
+  }
+
+  function fillUtm(form) {
+    var values = {};
+    each(UTM_FIELDS, function (name) {
+      var fromUrl = queryValue(name);
+      if (fromUrl) sessionSet('m88_' + name, fromUrl);
+      values[name] = fromUrl || sessionGet('m88_' + name);
+    });
+
+    if (queryValue('yclid')) {
+      if (!values.utm_source) values.utm_source = 'yandex';
+      if (!values.utm_medium) values.utm_medium = 'cpc';
+      sessionSet('m88_utm_source', values.utm_source);
+      sessionSet('m88_utm_medium', values.utm_medium);
+    }
+
+    each(UTM_FIELDS, function (name) {
+      var input = form.querySelector('input[name="' + name + '"]');
+      if (input) input.value = values[name] || '';
+    });
+  }
+
+  /* ------------------------------------------------------------------------
    * Телефон: +7 подставляется сам, цифры раскладываются в +7 (999) 123-45-67.
    * Если человек начинает с «+» и другого кода страны — не мешаем: у М88 есть
    * китайские и европейские контрагенты.
@@ -127,6 +180,8 @@
     var noteBase = note ? note.textContent : '';
     var chosen = [];
     var busy = false;
+
+    fillUtm(form);
 
     // ── служебные поля (honeypot + отметка времени) ──────────────────────────
     var trap = el('div', 'm88-trap');
@@ -272,6 +327,7 @@
         // возвращаем их вручную, иначе вторая заявка уйдёт без страницы
         started.value = String(Date.now());
         pageField.value = pageName;
+        fillUtm(form);
         if (button) { button.disabled = false; button.innerHTML = buttonHtml; }
       };
       box.appendChild(again);

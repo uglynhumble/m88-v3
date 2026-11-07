@@ -58,6 +58,41 @@ function mimeHeader(string $v): string
         : $v;
 }
 
+/** MIME-тип вложения по расширению — помогает почтовому клиенту открыть файл. */
+function attachmentMimeType(string $name): string
+{
+    $types = [
+        'pdf' => 'application/pdf',
+        'zip' => 'application/zip',
+        'rar' => 'application/vnd.rar',
+        '7z' => 'application/x-7z-compressed',
+        'jpg' => 'image/jpeg', 'jpeg' => 'image/jpeg', 'png' => 'image/png',
+        'doc' => 'application/msword',
+        'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'xls' => 'application/vnd.ms-excel',
+        'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'dwg' => 'image/vnd.dwg', 'dxf' => 'image/vnd.dxf',
+        'stl' => 'model/stl', 'step' => 'model/step', 'stp' => 'model/step',
+    ];
+    $ext = strtolower((string) pathinfo($name, PATHINFO_EXTENSION));
+    return $types[$ext] ?? 'application/octet-stream';
+}
+
+/** ASCII-имя для старых клиентов + RFC 2231 имя UTF-8 для современных. */
+function attachmentNames(string $name): array
+{
+    $ext  = strtolower((string) pathinfo($name, PATHINFO_EXTENSION));
+    $stem = (string) pathinfo($name, PATHINFO_FILENAME);
+    $ascii = function_exists('iconv')
+        ? (string) @iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $stem)
+        : $stem;
+    $ascii = preg_replace('/[^A-Za-z0-9._-]+/', '_', $ascii) ?? '';
+    $ascii = trim($ascii, '._-');
+    if ($ascii === '') $ascii = 'attachment';
+    $ascii = substr($ascii, 0, 80) . ($ext !== '' ? '.' . preg_replace('/[^a-z0-9]+/', '', $ext) : '');
+    return [$ascii, rawurlencode($name)];
+}
+
 function clientIp(): string
 {
     foreach (['HTTP_CF_CONNECTING_IP', 'HTTP_X_REAL_IP', 'HTTP_X_FORWARDED_FOR', 'REMOTE_ADDR'] as $k) {
@@ -133,6 +168,10 @@ $email   = field('email');
 $contact = field('contact');            // лендинг: единое поле «e-mail или телефон»
 $message = field('message') ?: field('task');
 $page    = field('page') ?: 'сайт М88';
+$utmSource   = field('utm_source');
+$utmMedium   = field('utm_medium');
+$utmCampaign = field('utm_campaign');
+$utmTerm     = field('utm_term');
 
 if ($name === '') {
     reply(false, 'Укажите, пожалуйста, имя.', ['field' => 'name'], 422);
@@ -244,6 +283,10 @@ $rows = array_filter([
     'Телефон'    => $phone,
     'E-mail'     => $email,
     'Контакт'    => $contact,
+    'utm_source'   => $utmSource,
+    'utm_medium'   => $utmMedium,
+    'utm_campaign' => $utmCampaign,
+    'utm_term'     => $utmTerm,
 ], static fn($v) => $v !== '');
 
 $plain  = "Новая заявка с сайта М88\n";
@@ -324,11 +367,12 @@ function buildMime(string $plain, string $html, array $attachments, array &$head
 
     $body  = "--{$mixB}\r\nContent-Type: multipart/alternative; boundary=\"{$altB}\"\r\n\r\n" . $alt . "\r\n";
     foreach ($attachments as $a) {
-        $fname = mimeHeader($a['name']);
+        [$fallbackName, $utf8Name] = attachmentNames($a['name']);
+        $contentType = attachmentMimeType($a['name']);
         $body .= "--{$mixB}\r\n"
-               . "Content-Type: application/octet-stream; name=\"{$fname}\"\r\n"
+               . "Content-Type: {$contentType}; name*=UTF-8''{$utf8Name}; name=\"{$fallbackName}\"\r\n"
                . "Content-Transfer-Encoding: base64\r\n"
-               . "Content-Disposition: attachment; filename=\"{$fname}\"\r\n\r\n"
+               . "Content-Disposition: attachment; filename*=UTF-8''{$utf8Name}; filename=\"{$fallbackName}\"\r\n\r\n"
                . chunk_split(base64_encode($a['data'])) . "\r\n";
     }
     $body .= "--{$mixB}--\r\n";
@@ -381,8 +425,20 @@ function smtpSend(array $cfg, array $to, string $rawHeaders, string $body, strin
     if (!$cmd('DATA', '354')) { fclose($fp); return false; }
 
     // Точка в начале строки экранируется по RFC 5321
-    $data = preg_replace('/^\./m', '..', $rawHeaders . "\r\n" . $body);
-    fwrite($fp, $data . "\r\n.\r\n");
+    // Между заголовками и MIME-телом обязательна пустая строка.
+    $data = preg_replace('/^\./m', '..', $rawHeaders . "\r\n\r\n" . $body);
+    $payload = $data . "\r\n.\r\n";
+    $offset = 0;
+    $length = strlen($payload);
+    while ($offset < $length) {
+        $written = fwrite($fp, substr($payload, $offset, 65536));
+        if ($written === false || $written === 0) {
+            $err = 'SMTP: не удалось полностью передать тело письма';
+            fclose($fp);
+            return false;
+        }
+        $offset += $written;
+    }
     if (!$cmd('', '250')) { fclose($fp); return false; }
     $cmd('QUIT', '221');
     fclose($fp);

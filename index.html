@@ -798,6 +798,11 @@ nav.main a.np:hover{color:var(--ember-2)}
         <h3>Отправьте ТЗ</h3>
         <p class="fsub">Опишите задачу — вернёмся с техническим предложением и оценкой.</p>
         <form id="tzform" data-m88form data-endpoint="/send.php" data-page="Главная — инжиниринг">
+          <!-- Яндекс Директ: значения берутся из utm_* в адресе объявления и сохраняются на время сессии. -->
+          <input type="hidden" name="utm_source" value="">
+          <input type="hidden" name="utm_medium" value="">
+          <input type="hidden" name="utm_campaign" value="">
+          <input type="hidden" name="utm_term" value="">
           <div class="m88-row">
             <div class="m88-f"><label for="f-name">Имя <span class="req">*</span></label><input id="f-name" name="name" autocomplete="name" placeholder="Как к вам обращаться" required></div>
             <div class="m88-f"><label for="f-company">Компания</label><input id="f-company" name="company" autocomplete="organization" placeholder="Название организации"></div>
@@ -1166,6 +1171,6 @@ document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){const ov=document.querySelector('.modal-overlay.show');if(ov)closeModal(ov);}
 });
 </script>
-<script src="assets/form.js" defer></script>
+<script src="assets/form.js?v=20261107-1" defer></script>
 </body>
 </html>
