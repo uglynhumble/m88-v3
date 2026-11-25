@@ -930,16 +930,32 @@ form[data-m88form].request-form textarea:focus { border-color: var(--green-300);
   .energy-nav .nav-request { justify-content: center; margin-left: 0; }
   .catalog-hero { min-height: 0; border-radius: 24px; }
   .hero-copy { padding: 64px 24px 20px; }
-  .hero-copy h1 { font-size: clamp(38px, 12vw, 57px); }
+  .hero-copy h1 {
+    font-size: clamp(32px, 9.6vw, 43px);
+    line-height: 1.02;
+    overflow-wrap: anywhere;
+  }
   .energy-about { gap: 34px; padding: 74px 15px 18px; }
-  .about-slogan h2 { font-size: clamp(44px, 14vw, 66px); }
+  .about-slogan h2 {
+    font-size: clamp(34px, 10.5vw, 48px);
+    line-height: .96;
+    overflow-wrap: anywhere;
+  }
   .about-slogan h2 em { margin-top: 7px; }
   .certification-card { gap: 22px; padding: 25px 22px; border-radius: 20px; }
+  .certification-card h3 { font-size: clamp(23px, 7.2vw, 30px); overflow-wrap: anywhere; }
   .hero-art { min-height: 330px; }
   .charge-core { width: min(38vw, 180px); border-width: 15px; }
   .energy-leaf { width: 55px; height: 85px; }
   .section-heading,
   .cart-heading { align-items: start; flex-direction: column; }
+  .section-heading h2,
+  .cart-heading h2,
+  .request-copy h2 {
+    font-size: clamp(30px, 8.8vw, 38px);
+    line-height: 1.02;
+    overflow-wrap: anywhere;
+  }
   .price-note { max-width: 100%; }
   .category-switch { display: grid; grid-template-columns: 1fr 1fr; }
   .category-switch button:last-child { grid-column: 1 / -1; }
